@@ -7,3 +7,4 @@ use CodeIgniter\Router\RouteCollection;
  */
 $routes->get('/', 'Home::index');
 $routes->get('/login/crearcuenta', 'CrearCuenta::index');
+$routes->post('/login/crearcuenta', 'CrearCuenta::index');

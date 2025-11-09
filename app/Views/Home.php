@@ -5,7 +5,7 @@
 
 <div class="border p-5 block d-lg-block container-xl">
     <p1>
-        Crear servidores host en colombia nunca fue tan facil con HostColombiano
+        Crear servidores host en colombia nunca fue tan facil con MIGI
     </p1>
     <br>
     <p1>

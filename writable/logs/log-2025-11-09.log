@@ -1,0 +1,15 @@
+CRITICAL - 2025-11-09 02:04:38 --> ErrorException: Undefined variable $data
+[Method: GET, Route: login/crearcuenta]
+in APPPATH/Views/login/crearcuenta.php on line 28.
+ 1 APPPATH/Views/login/crearcuenta.php(28): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(226): include('/home/shaggy/equipo/app/Views/login/crearcuenta.php')
+ 3 SYSTEMPATH/View/View.php(229): CodeIgniter\View\View->{closure:CodeIgniter\View\View::render():223}()
+ 4 SYSTEMPATH/Common.php(1167): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/CrearCuenta.php(7): view()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\CrearCuenta->index()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/shaggy/equipo/public/index.php')
