@@ -9,7 +9,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form class="p-5 mx-auto text-center border border-primary-subtle border-3 rounded-3">
+    <form class="p-5 mx-auto border border-primary-subtle border-3 rounded-3">
         <td>
             <tr>
                 <input type="text" placeholder="Nombre" class="form-control mb-3" required>
@@ -24,7 +24,7 @@
                 <input type="email" placeholder="Correo" class="form-control mb-3" required>
             </tr>
             <tr>
-                <input type="submit" placeholder="Correo" class="btn btn-success mb-3" required>
+                <input type="submit" value="Crear cuenta" class="btn btn-success mb-3" required>
             </tr>
         </td>
     </form>

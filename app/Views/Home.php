@@ -17,7 +17,9 @@
     </p1>
 </div>
 
-<a class="btn btn-success rounded-pill" href="/login/crearcuenta">Crear cuenta gratis</a>
+<div class="text-center p-3">
+    <a class="btn btn-success rounded-pill" href="/login/crearcuenta">Crear cuenta gratis</a>
+</div>
 
 <div class="d-flex justify-content-center">
     <div class="border m-2 p-2">
