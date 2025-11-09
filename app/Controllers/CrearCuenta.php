@@ -3,7 +3,8 @@
 
     class CrearCuenta extends BaseController{
         public function index(){
-            return view("/login/crearcuenta");
+            $data = ["error" => "Error grave"];
+            return view("/login/crearcuenta", $data);
         }
     }
 ?>

@@ -35,7 +35,7 @@
         <p>
             No nesecitas experiencia previa para usar <br>
             nuestros servicios,<br>
-            gracias a la interfazy la documentacion, <br>
+            gracias a la interfaz y la documentacion, <br>
             puedes usar facilmente el servicio.
         </p>
     </div>

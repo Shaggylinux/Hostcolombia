@@ -24,7 +24,7 @@
                 <input type="email" placeholder="Correo" class="form-control mb-3" required>
             </tr>
             <tr>
-                <input type="submit" value="Crear cuenta" class="btn btn-success mb-3" required>
+                <input type="submit" value="Crear cuenta" class="btn btn-success mb-3">
             </tr>
         </td>
     </form>
