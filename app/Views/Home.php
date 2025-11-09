@@ -18,7 +18,7 @@
 </div>
 
 <div class="text-center p-3">
-    <a class="btn btn-success rounded-pill" href="/login/crearcuenta">Crear cuenta gratis</a>
+    <a class="btn btn-success rounded-pill" href="<?php echo base_url("/login/crearcuenta")?>">Crear cuenta gratis</a>
 </div>
 
 <div class="d-flex justify-content-center">

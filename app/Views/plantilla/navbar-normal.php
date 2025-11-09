@@ -7,13 +7,17 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Descargas</a>
+          <a class="nav-link" aria-current="page" href="#">Descargas</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Documentacion</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Precios</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link active" href="<?php echo base_url("/login/login")?>">Iniciar Session</a>
         </li>
       </ul>
     </div>

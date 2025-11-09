@@ -1,1 +1,0 @@
-<h1>Error al ingresar los datos</h1>
