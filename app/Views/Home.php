@@ -1,7 +1,7 @@
 <?php echo $this -> extend("plantilla/layout")?>
 <?php echo $this -> section("contenido")?>
 
-<h1 class="border  p-2">Crea, protege y disfruta a bajos costos!!!</h1>
+<h1 class="border p-2 text-center">Crea, protege y disfruta a bajos costos!!!</h1>
 
 <div class="border p-5 block d-lg-block container-xl">
     <p1>
@@ -17,8 +17,7 @@
     </p1>
 </div>
 
-<a class="btn btn-success rounded-pill">Crear cuenta gratis</a>
-
+<a class="btn btn-success rounded-pill ">Crear cuenta gratis</a>
 
 <div class="d-flex justify-content-center">
     <div class="border m-2 p-2">
