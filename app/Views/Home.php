@@ -1,51 +1,58 @@
-<?php echo $this -> extend("plantilla/layout")?>
-<?php echo $this -> section("contenido")?>
+<?php echo $this->extend("plantilla/layout") ?>
+<?php echo $this->section("contenido") ?>
 
-<h1 class="border p-2 text-center">Crea, protege y disfruta a bajos costos!!!</h1>
+<div class="container my-5">
+    <h1 class="border p-3 text-center rounded bg-light shadow-sm">
+        ¡Crea, protege y disfruta a bajos costos con MIGI!
+    </h1>
 
-<div class="border p-5 block d-lg-block container-xl">
-    <p1>
-        Crear servidores host en colombia nunca fue tan facil con MIGI
-    </p1>
-    <br>
-    <p1>
-        Facil, rapido, seguro y a los mejores precios.
-    </p1>
-    <br>
-    <p1>
-        ¿Que estas esperando para armar tu servidor en Colombia?
-    </p1>
-</div>
-
-<div class="text-center p-3">
-    <a class="btn btn-success rounded-pill" href="<?php echo base_url("/login/crearcuenta")?>">Crear cuenta gratis</a>
-</div>
-
-<div class="d-flex justify-content-center">
-    <div class="border m-2 p-2">
-        <h3 class="text-center">¿Porque elegirnos?</h3>
-        <p>
-            Nuestro servicio busca ser facil de usar y <br>
-            muy accesible para aquellos que desean montar <br>
-            sus servidores en Colombia.
-        </p>
+    <div class="text-center mt-4">
+        <p>Crear servidores host en Colombia nunca fue tan fácil con <strong>MIGI</strong>.</p>
+        <p>Fácil, rápido, seguro y a los mejores precios.</p>
+        <p>¿Qué esperas para montar tu servidor en Colombia?</p>
     </div>
-    <div class="border m-2 p-2">
-        <h3 class="text-center">Facil uso</h3>
-        <p>
-            No nesecitas experiencia previa para usar <br>
-            nuestros servicios,<br>
-            gracias a la interfaz y la documentacion, <br>
-            puedes usar facilmente el servicio.
-        </p>
-    </div>
-    <div class="border m-2 p-2">
-        <h3 class="text-center">Mejor opcion</h3>
-        <p>
-            EL servicio es altamente accesible, <br>
-            facil uso y confiable para todos aquellos <br>
-            que buscan montar sus servidores y HOST en Colombia.
-        </p>
+
+    <div class="text-center mt-4">
+        <a class="btn btn-success btn-lg rounded-pill shadow" href="<?= base_url("/login/crearcuenta") ?>">
+            <i class="fa-solid fa-user-plus me-2"></i> Crear cuenta gratis
+        </a>
     </div>
 </div>
-<?php echo $this -> endSection()?>
+
+<hr class="my-5">
+
+<div class="container">
+    <h2 class="text-center mb-4">¿Por qué elegirnos?</h2>
+    <div class="row justify-content-center">
+
+        <div class="col-md-3 col-sm-6 m-2 p-3 border rounded shadow-sm text-center bg-white">
+            <i class="fa-solid fa-shield-halved fa-2x text-success mb-3"></i>
+            <h4>Seguridad</h4>
+            <p>
+                Nuestro servicio busca ser fácil de usar y muy accesible 
+                para todos los que desean montar sus servidores en Colombia.
+            </p>
+        </div>
+
+        <div class="col-md-3 col-sm-6 m-2 p-3 border rounded shadow-sm text-center bg-white">
+            <i class="fa-solid fa-bolt fa-2x text-warning mb-3"></i>
+            <h4>Fácil uso</h4>
+            <p>
+                No necesitas experiencia previa. Con nuestra interfaz 
+                y documentación podrás usar el servicio fácilmente.
+            </p>
+        </div>
+
+        <div class="col-md-3 col-sm-6 m-2 p-3 border rounded shadow-sm text-center bg-white">
+            <i class="fa-solid fa-star fa-2x text-primary mb-3"></i>
+            <h4>Mejor opción</h4>
+            <p>
+                Servicio accesible, confiable y rápido para todos los 
+                que buscan montar su servidor en Colombia.
+            </p>
+        </div>
+
+    </div>
+</div>
+
+<?php echo $this->endSection() ?>
