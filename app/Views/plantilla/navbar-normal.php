@@ -10,12 +10,8 @@
           <a class="nav-link" aria-current="page" href="#">Descargas</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Documentacion</a>
+          <a class="nav-link" href="<?php echo base_url("/general/precios")?>"> Planes </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="<?php echo base_url("/general/precios")?>"> Precios </a>
-        </li>
-
         <li class="nav-item">
           <a class="nav-link active" href="<?php echo base_url("/login/login")?>"> Iniciar Sesion </a>
         </li>
