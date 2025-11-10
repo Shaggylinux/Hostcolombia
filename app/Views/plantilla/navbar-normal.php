@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg bg-info">
   <div class="container-fluid">
-    <a class="navbar-brand" href="/">右</a>
+    <a class="navbar-brand" href="/"> 右 </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -13,11 +13,11 @@
           <a class="nav-link" href="#">Documentacion</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Precios</a>
+          <a class="nav-link" href="<?php echo base_url("/general/precios")?>"> Precios </a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link active" href="<?php echo base_url("/login/login")?>">Iniciar Session</a>
+          <a class="nav-link active" href="<?php echo base_url("/login/login")?>"> Iniciar Sesion </a>
         </li>
       </ul>
     </div>
