@@ -14,7 +14,7 @@
 
     <div class="text-center mt-4">
         <a class="btn btn-success btn-lg rounded-pill shadow" href="<?= base_url("/login/crearcuenta") ?>">
-            <i class="fa-solid fa-user-plus me-2"></i> Crear cuenta gratis
+            <i class="fa-solid fa-user-plus me-2"></i> Registrarse gratis
         </a>
     </div>
 </div>
