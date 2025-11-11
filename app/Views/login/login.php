@@ -1,33 +1,33 @@
-<?php echo $this->extend("plantilla/layout") ?>
-<?php echo $this->section("contenido") ?>
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Iniciar sesión</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <h1 class="text-center m-3 border-bottom pb-4 border-5">Iniciar Sesión</h1>
-        <form class="border p-4 rounded shadow mx-auto" style="max-width: 400px;">
-            <div class="input-group mb-3">
-                <span class="input-group-text"> <i class="fa-solid fa-user"></i> </span>
-                <input type="text" class="form-control" placeholder="Nombre en pantalla" required>
+    <div class="container mt-5" style="max-width: 400px;">
+        <h2 class="text-center mb-4">Iniciar sesión</h2>
+
+        <?php if(session()->getFlashdata('error')): ?>
+            <div class="alert alert-danger"><?= session()->getFlashdata('error') ?></div>
+        <?php endif; ?>
+
+        <form method="post" action="<?= base_url('/login/verificar') ?>">
+            <?= csrf_field() ?>
+            <div class="mb-3">
+                <label for="usuario" class="form-label">Usuario</label>
+                <input type="text" name="nombreusuario" id="usuario" class="form-control" required>
             </div>
-            <div class="input-group mb-3">
-                <span class="input-group-text"> <i class="fa-solid fa-lock"></i> </span>
-                <input type="password" class="form-control" placeholder="Contraseña" required>
+
+            <div class="mb-3">
+                <label for="clave" class="form-label">Contraseña</label>
+                <input type="password" name="clave" id="clave" class="form-control" required>
             </div>
-            <div class="input-group mb-3">
-                <span class="input-group-text"> <i class="fa-solid fa-right-to-bracket"></i> </span>
-                <input type="submit" name="enviar" class="form-control btn btn-primary" value="Iniciar sesion">
-            </div>
+
+            <button type="submit" class="btn btn-primary w-100">Entrar</button>
         </form>
     </div>
-
 </body>
 </html>
-
-<?php echo $this->endSection() ?>

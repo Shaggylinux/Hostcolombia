@@ -7,7 +7,7 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="#">Descargas</a>
+          <a class="nav-link" href="#">Descargas</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="<?php echo base_url("/general/precios")?>"> Planes </a>

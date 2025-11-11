@@ -11,7 +11,7 @@
 <body>
     <div class="container">
         <h1 class="text-center m-3 border-bottom pb-4 border-5">Crear cuenta</h1>
-        <form class="border p-4 rounded shadow mx-auto" style="max-width: 500px;" method="post">
+        <form action="<?= base_url('/login/crearcuenta') ?>" method="post" class="border p-4 rounded shadow mx-auto" style="max-width: 500px;">
             <td>
                 <tr>
                     <div class="input-group mb-3">
@@ -34,7 +34,7 @@
                 <tr>
                     <div class="input-group mb-3">
                         <span class="input-group-text"> <i class="fa-solid fa-envelope"></i> </span>
-                        <input type="email" placeholder="Correo" name="email" class="form-control">
+                        <input type="email" placeholder="Correo" name="correo" class="form-control">
                     </div>
                 </tr>
                 <tr>
