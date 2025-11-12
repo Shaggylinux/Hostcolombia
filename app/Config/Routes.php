@@ -18,6 +18,9 @@ $routes->get('/logout', 'Login::logout');
 $routes->get('/vista/usuario', 'Login::usuariovista');
 $routes->get('/vista/administrador', 'Login::administradorvista');
 
+$routes->get('/vista/error', 'Login::usuariovista');
+
+
 $routes->get('/general/precios', 'Precios::index');
 
 
