@@ -970,3 +970,196 @@ WARNING - 2025-11-12 23:22:38 --> [DEPRECATED] password_hash(): Passing null to 
  6 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
  7 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
  8 SYSTEMPATH/rewrite.php(44): require_once('/home/shaggy/equipo/public/index.php')
+DEBUG - 2025-11-12 23:30:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-12 23:30:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-12 23:30:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-12 23:30:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-12 23:30:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-12 23:30:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-12 23:30:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-12 23:41:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-11-12 23:41:41 --> CodeIgniter\Exceptions\RuntimeException: View themes, no current section.
+[Method: GET, Route: login/login]
+in SYSTEMPATH/View/View.php on line 430.
+ 1 APPPATH/Views/login/login.php(66): CodeIgniter\View\View->endSection()
+ 2 SYSTEMPATH/View/View.php(226): include('/home/shaggy/equipo/app/Views/login/login.php')
+ 3 SYSTEMPATH/View/View.php(229): CodeIgniter\View\View->{closure:CodeIgniter\View\View::render():223}()
+ 4 SYSTEMPATH/Common.php(1167): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Login.php(9): view()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Login->index()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/shaggy/equipo/public/index.php')
+WARNING - 2025-11-12 23:41:58 --> [DEPRECATED] password_hash(): Passing null to parameter #1 ($password) of type string is deprecated in APPPATH/Controllers/CrearCuenta.php on line 12.
+ 1 APPPATH/Controllers/CrearCuenta.php(12): password_hash(Object(SensitiveParameterValue), '2y')
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\CrearCuenta->index()
+ 3 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CrearCuenta))
+ 4 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/home/shaggy/equipo/public/index.php')
+DEBUG - 2025-11-12 23:42:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-11-12 23:42:03 --> CodeIgniter\Exceptions\RuntimeException: View themes, no current section.
+[Method: GET, Route: login/login]
+in SYSTEMPATH/View/View.php on line 430.
+ 1 APPPATH/Views/login/login.php(66): CodeIgniter\View\View->endSection()
+ 2 SYSTEMPATH/View/View.php(226): include('/home/shaggy/equipo/app/Views/login/login.php')
+ 3 SYSTEMPATH/View/View.php(229): CodeIgniter\View\View->{closure:CodeIgniter\View\View::render():223}()
+ 4 SYSTEMPATH/Common.php(1167): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Login.php(9): view()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Login->index()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/shaggy/equipo/public/index.php')
+DEBUG - 2025-11-12 23:47:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-11-12 23:47:19 --> CodeIgniter\Exceptions\RuntimeException: View themes, no current section.
+[Method: GET, Route: login/login]
+in SYSTEMPATH/View/View.php on line 430.
+ 1 APPPATH/Views/login/login.php(63): CodeIgniter\View\View->endSection()
+ 2 SYSTEMPATH/View/View.php(226): include('/home/shaggy/equipo/app/Views/login/login.php')
+ 3 SYSTEMPATH/View/View.php(229): CodeIgniter\View\View->{closure:CodeIgniter\View\View::render():223}()
+ 4 SYSTEMPATH/Common.php(1167): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Login.php(9): view()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Login->index()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/shaggy/equipo/public/index.php')
+DEBUG - 2025-11-12 23:47:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-11-12 23:47:21 --> CodeIgniter\Exceptions\RuntimeException: View themes, no current section.
+[Method: GET, Route: login/login]
+in SYSTEMPATH/View/View.php on line 430.
+ 1 APPPATH/Views/login/login.php(63): CodeIgniter\View\View->endSection()
+ 2 SYSTEMPATH/View/View.php(226): include('/home/shaggy/equipo/app/Views/login/login.php')
+ 3 SYSTEMPATH/View/View.php(229): CodeIgniter\View\View->{closure:CodeIgniter\View\View::render():223}()
+ 4 SYSTEMPATH/Common.php(1167): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Login.php(9): view()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Login->index()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/shaggy/equipo/public/index.php')
+DEBUG - 2025-11-12 23:53:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-11-12 23:53:45 --> CodeIgniter\Exceptions\RuntimeException: View themes, no current section.
+[Method: GET, Route: login/login]
+in SYSTEMPATH/View/View.php on line 430.
+ 1 APPPATH/Views/login/login.php(63): CodeIgniter\View\View->endSection()
+ 2 SYSTEMPATH/View/View.php(226): include('/home/shaggy/equipo/app/Views/login/login.php')
+ 3 SYSTEMPATH/View/View.php(229): CodeIgniter\View\View->{closure:CodeIgniter\View\View::render():223}()
+ 4 SYSTEMPATH/Common.php(1167): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Login.php(9): view()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Login->index()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/shaggy/equipo/public/index.php')
+DEBUG - 2025-11-12 23:53:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-11-12 23:53:46 --> CodeIgniter\Exceptions\RuntimeException: View themes, no current section.
+[Method: GET, Route: login/login]
+in SYSTEMPATH/View/View.php on line 430.
+ 1 APPPATH/Views/login/login.php(63): CodeIgniter\View\View->endSection()
+ 2 SYSTEMPATH/View/View.php(226): include('/home/shaggy/equipo/app/Views/login/login.php')
+ 3 SYSTEMPATH/View/View.php(229): CodeIgniter\View\View->{closure:CodeIgniter\View\View::render():223}()
+ 4 SYSTEMPATH/Common.php(1167): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Login.php(9): view()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Login->index()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/shaggy/equipo/public/index.php')
+DEBUG - 2025-11-12 23:54:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-11-12 23:54:39 --> CodeIgniter\Exceptions\RuntimeException: View themes, no current section.
+[Method: GET, Route: login/login]
+in SYSTEMPATH/View/View.php on line 430.
+ 1 APPPATH/Views/login/login.php(63): CodeIgniter\View\View->endSection()
+ 2 SYSTEMPATH/View/View.php(226): include('/home/shaggy/equipo/app/Views/login/login.php')
+ 3 SYSTEMPATH/View/View.php(229): CodeIgniter\View\View->{closure:CodeIgniter\View\View::render():223}()
+ 4 SYSTEMPATH/Common.php(1167): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Login.php(9): view()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Login->index()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/shaggy/equipo/public/index.php')
+DEBUG - 2025-11-12 23:54:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-11-12 23:54:42 --> CodeIgniter\Exceptions\RuntimeException: View themes, no current section.
+[Method: GET, Route: login/login]
+in SYSTEMPATH/View/View.php on line 430.
+ 1 APPPATH/Views/login/login.php(63): CodeIgniter\View\View->endSection()
+ 2 SYSTEMPATH/View/View.php(226): include('/home/shaggy/equipo/app/Views/login/login.php')
+ 3 SYSTEMPATH/View/View.php(229): CodeIgniter\View\View->{closure:CodeIgniter\View\View::render():223}()
+ 4 SYSTEMPATH/Common.php(1167): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Login.php(9): view()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Login->index()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/shaggy/equipo/public/index.php')
+DEBUG - 2025-11-12 23:55:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-11-12 23:55:58 --> CodeIgniter\Exceptions\RuntimeException: View themes, no current section.
+[Method: GET, Route: login/login]
+in SYSTEMPATH/View/View.php on line 430.
+ 1 APPPATH/Views/login/login.php(63): CodeIgniter\View\View->endSection()
+ 2 SYSTEMPATH/View/View.php(226): include('/home/shaggy/equipo/app/Views/login/login.php')
+ 3 SYSTEMPATH/View/View.php(229): CodeIgniter\View\View->{closure:CodeIgniter\View\View::render():223}()
+ 4 SYSTEMPATH/Common.php(1167): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Login.php(9): view()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Login->index()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/shaggy/equipo/public/index.php')
+DEBUG - 2025-11-12 23:56:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-11-12 23:56:00 --> CodeIgniter\Exceptions\RuntimeException: View themes, no current section.
+[Method: GET, Route: login/login]
+in SYSTEMPATH/View/View.php on line 430.
+ 1 APPPATH/Views/login/login.php(63): CodeIgniter\View\View->endSection()
+ 2 SYSTEMPATH/View/View.php(226): include('/home/shaggy/equipo/app/Views/login/login.php')
+ 3 SYSTEMPATH/View/View.php(229): CodeIgniter\View\View->{closure:CodeIgniter\View\View::render():223}()
+ 4 SYSTEMPATH/Common.php(1167): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Login.php(9): view()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Login->index()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/shaggy/equipo/public/index.php')
+DEBUG - 2025-11-12 23:56:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-11-12 23:56:51 --> CodeIgniter\Exceptions\RuntimeException: View themes, no current section.
+[Method: GET, Route: login/login]
+in SYSTEMPATH/View/View.php on line 430.
+ 1 APPPATH/Views/login/login.php(63): CodeIgniter\View\View->endSection()
+ 2 SYSTEMPATH/View/View.php(226): include('/home/shaggy/equipo/app/Views/login/login.php')
+ 3 SYSTEMPATH/View/View.php(229): CodeIgniter\View\View->{closure:CodeIgniter\View\View::render():223}()
+ 4 SYSTEMPATH/Common.php(1167): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Login.php(9): view()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Login->index()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/shaggy/equipo/public/index.php')
+DEBUG - 2025-11-12 23:57:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

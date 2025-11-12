@@ -1,6 +1,3 @@
-<?php echo $this->extend("plantilla/layout") ?>
-<?php echo $this->section("contenido") ?>
-
 <!doctype html>
 <html lang="es">
 
@@ -60,7 +57,3 @@
 </body>
 
 </html>
-
-<?php echo $this->endSection() ?>
-
-<?php echo $this->endSection() ?>
