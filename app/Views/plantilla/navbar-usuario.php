@@ -5,7 +5,6 @@
     <a class="navbar-brand" href="#">Usuario</a>
     <a class="navbar-brand" href="#">Usuario</a>
     <span class=""> PLAN : GRATUITO </span>
-    <span class=""> PUTO EL QUE LO LEA </span>
     <a class="btn btn-danger" href="<?php echo base_url("/logout")?>"> <i class="fa-solid fa-door-open"> </i> Salir </a>
   </div>
 </nav>
