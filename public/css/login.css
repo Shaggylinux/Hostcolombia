@@ -1,0 +1,148 @@
+/* ====== ESTILOS GENERALES ====== */
+
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #1e3a8a, #111827);
+}
+
+
+body {
+  background-color: #f3f4f6;
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* ====== CONTENEDOR PRINCIPAL ====== */
+.login-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+/* ====== TARJETA DEL LOGIN ====== */
+.login-card {
+  background-color: #111827;
+  color: #ffffff;
+  border-radius: 16px;
+  padding: 40px 30px;
+  width: 360px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* ====== ICONO SUPERIOR ====== */
+.icon-circle {
+  background-color: #1f2937;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 15px auto;
+}
+
+.icon-circle i {
+  font-size: 30px;
+  color: #3b82f6;
+}
+
+/* ====== TITULO Y SUBTITULO ====== */
+.title {
+  font-size: 1.6em;
+  margin-bottom: 5px;
+}
+
+.subtitle {
+  color: #9ca3af;
+  font-size: 0.9em;
+  margin-bottom: 25px;
+}
+
+/* ====== FORMULARIO ====== */
+.form-label {
+  color: #d1d5db;
+  font-size: 0.9em;
+  margin-bottom: 6px;
+}
+
+.input-group {
+  background-color: #1f2937;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.input-group-text {
+  background-color: transparent;
+  border: none;
+  color: #9ca3af;
+}
+
+.form-control {
+  background: none !important;
+  border: none !important;
+  color: #ffffff !important;
+  font-size: 0.95em;
+  box-shadow: none !important;
+}
+
+.form-control::placeholder {
+  color: #9ca3af;
+}
+
+/* ====== BOTÓN DE ACCESO ====== */
+.btn-login {
+  background-color: #2563eb;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  width: 100%;
+  padding: 12px;
+  margin-top: 20px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.btn-login:hover {
+  background-color: #1e40af;
+}
+
+/* ====== ENLACE OLVIDASTE CONTRASEÑA ====== */
+.forgot-link {
+  color: #60a5fa;
+  font-size: 0.85em;
+  text-decoration: none;
+}
+
+.forgot-link:hover {
+  text-decoration: underline;
+}
+
+/* ====== PIE DE PÁGINA ====== */
+.footer-text {
+  color: #6b7280;
+  font-size: 0.75em;
+}
+
+/* ====== BOTÓN DE MOSTRAR CONTRASEÑA ====== */
+.toggle-password {
+  cursor: pointer;
+}
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 480px) {
+  .login-card {
+    width: 90%;
+    padding: 30px 20px;
+  }
+}
