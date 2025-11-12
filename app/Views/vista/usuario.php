@@ -1,3 +1,6 @@
+<?php echo $this -> extend("plantilla/layout-usuario")?>
+<?php echo $this -> section("contenido")?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -6,7 +9,11 @@
     <title>Panel de control</title>
 </head>
 <body>
-    <h1>Vista de usuario</h1>
-    <a href="<?php echo base_url("/logout")?>"> Cerrar sesion </a>
+    <div class="container border rounded p-5 m-5 mx-auto shadow" style="width: 500px;">
+        <h1 class="text-center">MAQUINAS</h1>
+        <button class="btn btn-success form-control shadow"> <i class="fa-solid fa-plus"></i> </button>
+    </div>
 </body>
 </html>
+
+<?php echo $this -> endSection()?>

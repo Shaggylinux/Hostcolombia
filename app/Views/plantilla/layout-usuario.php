@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css">
   </head>
   <body>
-    <?php echo  $this -> include("plantilla/navbar-normal")?>
+    <?php echo  $this -> include("plantilla/navbar-usuario")?>
     <?php echo $this -> renderSection("contenido")?>
   </body>
 </html>

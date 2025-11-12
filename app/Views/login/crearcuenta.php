@@ -11,7 +11,7 @@
 <body>
     <div class="border rounded-5 shadow mx-auto m-5 p-4" style="max-width: 500px;">
         <h1 class="text-center rounded-5 shadow mb-4 "> Registrarse </h1>
-        <form action="<?= base_url('/login/crearcuenta') ?>" method="post" class="">
+        <form action="<?= base_url('/login/crearcuenta') ?>" method="post">
             <td>
                 <tr>
                     <div class="input-group mb-3 shadow">
@@ -39,7 +39,7 @@
                 </tr>
                 <tr>
                     <div class="input-group mb-3 shadow">
-                        <button type="submit" class="btn btn-primary form-control shadow"> <i class="fa-solid fa-user-plus"></i> Iniciar sesion </button>
+                        <button type="submit" class="btn btn-primary form-control shadow"> <i class="fa-solid fa-user-plus"></i> Registrar </button>
                     </div>
                 </tr>
             </td>
