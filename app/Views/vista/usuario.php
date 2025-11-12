@@ -7,6 +7,6 @@
 </head>
 <body>
     <h1>Vista de usuario</h1>
-    <a href="<?php echo base_url("/logout")?>">Cerrar sesion</a>
+    <a href="<?php echo base_url("/logout")?>"> Cerrar sesion </a>
 </body>
 </html>
