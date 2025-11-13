@@ -5,7 +5,7 @@
 
     class Rol extends BaseController{
         public function index(){
-            if(!session()->has("usuarios")){
+            if(!session() -> has("usuarios")){
                 return redirect() -> to("/login/login");
             }
             if(session("perfil")  != 1){

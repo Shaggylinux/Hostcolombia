@@ -1,6 +1,6 @@
 <nav class="navbar bg-body-tertiary">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Usuario</a>
+    <a class="navbar-brand" href="<?php echo base_url("/vista/usuario")?>">Home</a>
     <a class="navbar-brand" href="#">Usuario</a>
     <a class="navbar-brand" href="#">Usuario</a>
     <a class="navbar-brand" href="#">Usuario</a>

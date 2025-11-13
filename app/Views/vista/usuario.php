@@ -11,7 +11,10 @@
 <body>
     <div class="container border rounded p-5 m-5 mx-auto shadow" style="width: 500px;">
         <h1 class="text-center">MAQUINAS</h1>
-        <button class="btn btn-success form-control shadow"> <i class="fa-solid fa-plus"></i> </button>
+        <?php foreach($nombreserver as $nombre):?>
+            <button class="btn btn-primary form-control mb-3 shadow"> <?php echo $nombre -> nombre?> </button>
+        <?php endforeach?>
+        <a href="<?php echo base_url("/vista/usuario-server")?>" class="btn btn-success form-control shadow"> <i class="fa-solid fa-plus"></i> </a>
     </div>
 </body>
 </html>

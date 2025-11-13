@@ -2,6 +2,7 @@
     namespace App\Controllers;
     use App\Controllers\BaseController;
     use App\Models\UsuarioModel;
+    use Config\Database;
 
     class Login extends BaseController {
 
@@ -11,7 +12,11 @@
 
         public function usuariovista(){
             if (session() -> has("usuarios")){
-                return view('/vista/usuario');
+                $db = Database::connect();
+                $query = $db -> query("select nombre from servidor");
+                $resultado = $query -> getResult();
+                $data = ["nombreserver" => $resultado];
+                return view('/vista/usuario',$data);
             }
             return view("/vista/error");
         }
@@ -24,8 +29,8 @@
         }
 
         public function verificar() {
-            $usuario  = $this->request->getPost('nombreusuario');
-            $password = $this->request->getPost('clave');
+            $usuario  = $this -> request -> getPost('nombreusuario');
+            $password = $this -> request -> getPost('clave');
         
             $model = new UsuarioModel();
             $datosUsuario = $model -> where('nombreusuario', $usuario)->first();
