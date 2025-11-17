@@ -9,7 +9,9 @@
                                     "nombre",
                                     "descripcion",
                                     "dominio",
-                                    "dns"];
+                                    "dns",
+                                    "id_usuario" ];
+                                    
         public $timestamps = false;
     }
 ?>

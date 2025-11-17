@@ -9,21 +9,25 @@
 
         public function guardar(){
             $model = new UsuarioServerModel();
-            
-            $nombre = $this -> request -> getPost("nombreserver");
+
+            $user = session() -> get("usuarios");
+            $id = $user["id"];
+
+            $nombre      = $this -> request -> getPost("nombreserver");
             $descripcion = $this -> request -> getPost("descripcionserver");
-            $dominio = $this -> request -> getPost("dominioserver");
-            $dns1 = $this -> request -> getPost("dns1");
-            $dns2 = $this -> request -> getPost("dns2");
-            $dns3 = $this -> request -> getPost("dns3");
-            $dns4 = $this -> request -> getPost("dns4");
-            $dns = $dns1.".".$dns2.".".$dns3.".".$dns4;
+            $dominio     = $this -> request -> getPost("dominioserver");
+            $dns1        = $this -> request -> getPost("dns1");
+            $dns2        = $this -> request -> getPost("dns2");
+            $dns3        = $this -> request -> getPost("dns3");
+            $dns4        = $this -> request -> getPost("dns4");
+            $dns         = $dns1.".".$dns2.".".$dns3.".".$dns4;
             
             $model -> insert([
-                "nombre" => $nombre,
+                "nombre"      => $nombre,
                 "descripcion" => $descripcion,
-                "dominio" => $dominio,
-                "dns" => $dns
+                "dominio"     => $dominio,
+                "dns"         => $dns,
+                "id_usuario"  => $id
             ]);
 
             return redirect() -> to("/vista/usuario");

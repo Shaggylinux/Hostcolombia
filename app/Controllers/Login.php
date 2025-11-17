@@ -3,23 +3,40 @@
     use App\Controllers\BaseController;
     use App\Models\UsuarioModel;
     use Config\Database;
-
+    use App\Models\UsuarioServerModel;
     class Login extends BaseController {
 
         public function index() {
             return view('login/login');
         }
 
-        public function usuariovista(){
-            if (session() -> has("usuarios")){
-                $db = Database::connect();
-                $query = $db -> query("select nombre from servidor");
-                $resultado = $query -> getResult();
-                $data = ["nombreserver" => $resultado];
-                return view('/vista/usuario',$data);
-            }
+public function usuariovista(){
+    if (session()->has("usuarios")) {
+    
+        $usuario = session()->get("usuarios");
+        $idusuario = $usuario["id"]; 
+    
+        $UsuarioServer = new UsuarioServerModel();
+        
+        $servidores = $UsuarioServer
+                        ->where("id_usuario", $idusuario)
+                        ->findAll();
+        
+        $db = Database::connect();
+        $query = $db->query("SELECT nombre FROM servidor");
+        $resultado = $query->getResult();
+    
+        $data = [
+            "nombreserver" => $resultado,
+            "Userid"       => $idusuario,
+            "servidores"   => $servidores
+        ];
+    
+        return view('/vista/usuario', $data);
+    }
             return view("/vista/error");
         }
+
 
         public function administradorvista(){
             if (session("perfil") == 1){
@@ -36,7 +53,8 @@
             $datosUsuario = $model -> where('nombreusuario', $usuario)->first();
         
             if ($datosUsuario && password_verify($password, $datosUsuario['clave'])) {
-                session() -> set('usuarios', $datosUsuario['nombreusuario']);
+                session() -> set('usuarios', $datosUsuario);
+                session() -> set("id", $datosUsuario["id"]);
                 session() -> set('perfil', $datosUsuario['id']);
 
                 if ($datosUsuario['id'] == 1) {
