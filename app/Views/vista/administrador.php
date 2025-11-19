@@ -1,3 +1,6 @@
+<?php echo $this -> extend("plantilla/layout-administrador")?>
+<?php echo $this -> section("contenido")?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -8,8 +11,7 @@
     <title>Panel de administrativo</title>
 </head>
 <body>
-    <h1>Vista de administrador</h1>
-    <a class="btn btn-danger text-center" href="<?php echo base_url("/logout")?>"> <i class="fa-solid fa-right-to-bracket"></i> </a>
+    <h1 class="text-center">Servidores</h1>
     <div class="container  mt-4 shadow border p-4 rounded-5 border-5 mx-auto m-4">
         <table class="table table-striped table-hover table-bordered align-middle rounded text-center">
             <thead class="table-primary">
@@ -40,3 +42,5 @@
     </div>
 </body>
 </html>
+
+<?php echo $this -> endSection()?>
