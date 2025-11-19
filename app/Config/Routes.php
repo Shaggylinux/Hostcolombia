@@ -24,7 +24,7 @@ $routes->get('/vista/administrador', 'Login::administradorvista');
 $routes->get('/vista/error', 'Login::usuariovista');
 $routes->get('/general/precios', 'Precios::index');
 
-
+$routes->get("/login/eliminar/(:num)","Login::eliminar/$1");
 
 
 // Ruta protegida (requiere sesión)

@@ -40,7 +40,11 @@ public function usuariovista(){
 
         public function administradorvista(){
             if (session("perfil") == 1){
-                return view('/vista/administrador');
+                $db = Database::connect();
+                $query = $db -> query("SELECT * FROM servidor order by id_usuario asc");
+                $resultado = $query->getResult();
+                $data = ["todo" => $resultado];
+                return view('/vista/administrador', $data);
             }
             return view("/vista/error");
         }
@@ -50,7 +54,7 @@ public function usuariovista(){
             $password = $this -> request -> getPost('clave');
         
             $model = new UsuarioModel();
-            $datosUsuario = $model -> where('nombreusuario', $usuario)->first();
+            $datosUsuario = $model -> where('nombreusuario', $usuario) -> first();
         
             if ($datosUsuario && password_verify($password, $datosUsuario['clave'])) {
                 session() -> set('usuarios', $datosUsuario);
@@ -70,5 +74,11 @@ public function usuariovista(){
         public function logout(){
             session() -> destroy();
             return redirect() -> to("/login/login");
+        }
+
+        public function eliminar($id){
+            $model = new UsuarioServerModel();
+            $model -> delete($id);
+            return redirect() -> to("/vista/administrador");
         }
 }
