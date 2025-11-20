@@ -9,7 +9,7 @@
     <div class="text-center mt-4">
         <p>Crear servidores host en Colombia nunca fue tan fácil con <strong>MIGI</strong>.</p>
         <p>Fácil, rápido, seguro y a los mejores precios.</p>
-        <p>¿Qué esperas para montar tu servidor en Colombia?</p>
+        <p>¿Qué esperas para unirte y guardar tus archivos de forma segura en Colombia?</p>
     </div>
 
     <div class="text-center mt-4">
@@ -29,7 +29,7 @@
             <i class="fa-solid fa-shield-halved fa-2x text-success mb-3"></i>
             <h4>Seguridad</h4>
             <p>
-                Nuestro servicio busca ser fácil de usar y muy accesible 
+                Nuestro servicio busca ser fácil de usar y muy accesible
                 para todos los que desean montar sus servidores en Colombia.
             </p>
         </div>
@@ -38,7 +38,7 @@
             <i class="fa-solid fa-bolt fa-2x text-warning mb-3"></i>
             <h4>Fácil uso</h4>
             <p>
-                No necesitas experiencia previa. Con nuestra interfaz 
+                No necesitas experiencia previa. Con nuestra interfaz
                 y documentación podrás usar el servicio fácilmente.
             </p>
         </div>
@@ -47,7 +47,7 @@
             <i class="fa-solid fa-star fa-2x text-primary mb-3"></i>
             <h4>Mejor opción</h4>
             <p>
-                Servicio accesible, confiable y rápido para todos los 
+                Servicio accesible, confiable y rápido para todos los
                 que buscan montar su servidor en Colombia.
             </p>
         </div>
