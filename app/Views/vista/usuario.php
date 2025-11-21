@@ -13,7 +13,7 @@
         <h1>  <?php echo $Userid ?> </h1>
         <h1 class="text-center">MAQUINAS</h1>
         <?php foreach($servidores as $te):?>
-                <button class="btn btn-primary form-control mb-3 shadow"> <?php echo $te["nombre"]?> </button>
+            <a href="<?php echo base_url("/vista/editar-server/".$te["id"]) ?>"> <button class="btn btn-primary form-control mb-3 shadow"> <?php echo $te["nombre"]?> </button> </a>
         <?php endforeach?>
         <a href="<?php echo base_url("/vista/usuario-server")?>" class="btn btn-success form-control shadow"> <i class="fa-solid fa-plus"></i> </a>
     </div>

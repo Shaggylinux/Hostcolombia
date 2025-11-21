@@ -28,3 +28,6 @@ $routes->get("/login/eliminar/(:num)","Login::eliminar/$1");
 $routes->get("/usuario/eliminar/(:num)","Administrador::eliminar/$1");
 
 $routes->get('/vista/administrador-usuarios', 'Administrador::index');
+
+$routes->get("/vista/editar-server/(:num)","Login::editar/$1");
+$routes->post("/server/actualizar/(:num)","Login::actualizar/$1");

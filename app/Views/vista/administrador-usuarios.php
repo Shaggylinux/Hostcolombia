@@ -32,7 +32,7 @@
                     <td> <?php echo $usuario -> correo?>        </td>
                     <td>
                         <?php if($usuario -> id == 1):?>
-                            <a class="btn btn-warning btn-sm shadow-sm"> <i class="fa-solid fa-lock"></i> </a>
+                            <a class="btn btn-warning btn-sm shadow-sm"> ADMINISTRADOR </a>
                         <?php else:?>
                             <a href="<?php echo base_url("usuario/eliminar/".$usuario -> id)?>" class="btn btn-danger btn-sm shadow-sm"> <i class="fa-solid fa-trash"></i> </a>
                         <?php endif ?>

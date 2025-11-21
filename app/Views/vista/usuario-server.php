@@ -36,11 +36,11 @@
             </div>
 
             <div>
-                <button class="btn btn-success form-control shadow"><i class="fa-solid fa-plus"></i> AGREGAR</button>
+                <button class="btn btn-success form-control shadow"> <i class="fa-solid fa-plus"></i> AGREGAR</button>
             </div>
         </form>
     </div>
 </body>
 </html>
 
-<?php echo $this -> endSection()?>
+<?php echo $this -> endSection()?>  

@@ -81,4 +81,16 @@ public function usuariovista(){
             $model -> delete($id);
             return redirect() -> to("/vista/administrador");
         }
+
+        public function editar($id){
+            $model = new UsuarioServerModel();
+            $data = ["server" => $model -> find($id)];
+            return view("/vista/editar-server", $data);
+        }
+
+        public function actualizar($id){
+            $model = new UsuarioServerModel();
+            $model -> update($id, $this -> request -> getPost());
+            return redirect() -> to("/vista/usuario");
+        }
 }

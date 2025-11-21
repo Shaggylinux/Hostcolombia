@@ -10,7 +10,7 @@
 </head>
 <body>
     <div class="border rounded-5 shadow mx-auto m-5 p-4" style="max-width: 500px;">
-        <h1 class="text-center rounded-5 shadow mb-4 "> Registrarse </h1>
+        <h1 class="text-center mb-5"> Registrarse </h1>
         <form action="<?= base_url('/login/crearcuenta') ?>" method="post">
             <td>
                 <tr>

@@ -11,7 +11,7 @@ create table usuarios(
 	nombreusuario varchar(20),
 	clave text,
 	correo text,
-	id_perfil int
+	id_perfil int,
 	foreign key (id_perfil) references perfil(id)
 );
 
@@ -21,6 +21,6 @@ create table servidor(
 	descripcion varchar(50),
 	dominio varchar(30),
 	dns varchar(20),
-	id_usuario int
+	id_usuario int,
 	foreign key (id_usuario) references usuarios(id)
 );
