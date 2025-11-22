@@ -15,7 +15,7 @@
         <?php foreach($servidores as $te):?>
             <div class="input-group flex-nowrap mb-3">
                 <button class="btn btn-primary form-control"> <?php echo $te["nombre"]?> </button> </a>
-                <span class="form-control"> <a href="<?php echo base_url("/vista/editar-server/".$te["id"]) ?>"> <i class="fa-solid fa-pencil"></i> </a> </span>
+                <span class="input-group-text"> <a href="<?php echo base_url("/vista/editar-server/".$te["id"]) ?>"> <i class="fa-solid fa-pencil"></i> </a> </span>
             </div>
 
         <?php endforeach?>
