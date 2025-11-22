@@ -11,7 +11,7 @@
             $model = new UsuarioServerModel();
 
             $user = session() -> get("usuarios");
-            $id = $user["id"];
+            $id   = $user["id"];
 
             $nombre      = $this -> request -> getPost("nombreserver");
             $descripcion = $this -> request -> getPost("descripcionserver");

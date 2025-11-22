@@ -2,52 +2,14 @@
     namespace App\Controllers;
     use App\Controllers\BaseController;
     use App\Models\UsuarioModel;
-    use Config\Database;
     use App\Models\UsuarioServerModel;
     class Login extends BaseController {
 
-        public function index() {
-            return view('login/login');
-        }
-
-public function usuariovista(){
-    if (session()->has("usuarios")) {
-    
-        $usuario = session()->get("usuarios");
-        $idusuario = $usuario["id"]; 
-    
-        $UsuarioServer = new UsuarioServerModel();
-        
-        $servidores = $UsuarioServer
-                        ->where("id_usuario", $idusuario)
-                        ->findAll();
-        
-        $db = Database::connect();
-        $query = $db->query("SELECT nombre FROM servidor");
-        $resultado = $query->getResult();
-    
-        $data = [
-            "nombreserver" => $resultado,
-            "Userid"       => $idusuario,
-            "servidores"   => $servidores
-        ];
-    
-        return view('/vista/usuario', $data);
-    }
-            return view("/vista/error");
+    public function index() {
+        return view('login/login');
         }
 
 
-        public function administradorvista(){
-            if (session("perfil") == 1){
-                $db = Database::connect();
-                $query = $db -> query("SELECT * FROM servidor order by id_usuario asc");
-                $resultado = $query->getResult();
-                $data = ["todo" => $resultado];
-                return view('/vista/administrador', $data);
-            }
-            return view("/vista/error");
-        }
 
         public function verificar() {
             $usuario  = $this -> request -> getPost('nombreusuario');

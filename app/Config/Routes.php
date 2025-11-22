@@ -18,8 +18,8 @@ $routes->get('/logout', 'Login::logout');
 $routes->get("/vista/usuario-server","Usuarioserver::index");
 $routes->post("/vista/usuario-server","Usuarioserver::guardar");
 
-$routes->get('/vista/usuario', 'Login::usuariovista');
-$routes->get('/vista/administrador', 'Login::administradorvista');
+$routes->get('/vista/usuario', 'Usuario::usuariovista');
+$routes->get('/vista/administrador', 'Usuario::administradorvista');
 
 $routes->get('/vista/error', 'Login::usuariovista');
 $routes->get('/general/precios', 'Precios::index');
