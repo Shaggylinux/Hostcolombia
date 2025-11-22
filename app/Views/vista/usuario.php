@@ -11,7 +11,7 @@
 <body>
     <div class="container border rounded p-5 m-5 mx-auto shadow" style="width: 500px;">
         <h1>  <?php echo $Userid ?> </h1>
-        <h1 class="text-center">MAQUINAS</h1>
+        <h1 class="text-center">MAQUINAS CREADAS</h1>
         <?php foreach($servidores as $te):?>
             <div class="input-group flex-nowrap mb-3">
                 <button class="btn btn-primary form-control"> <?php echo $te["nombre"]?> </button> </a>
