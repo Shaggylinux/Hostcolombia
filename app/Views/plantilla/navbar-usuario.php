@@ -1,29 +1,53 @@
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+<!DOCTYPE html>
+<html lang="es">
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-<link rel="stylesheet" href="<?= base_url('css/navbar.css') ?>" />
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="<?= base_url('css/navbar.css') ?>" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+</head>
 
-<label>
+<body>
 
-  <input type="checkbox">
-  <div class="toggle">
-    <span class="top_line common"></span>
-    <span class="middle_line common"></span>
-    <span class="bottom_line common"></span>
-  </div>
-
-  <div class="slide">
-    <h1 class="menu">Menu</h1>
-    <ul>
-      <li><span class=""> PLAN : GRATUITO </span></li>
-      <li><a href="#"><i class="fas fa-user"></i>Editar Perfil</a></li>
-      <li><a href="#"><i class="fas fa-cogs"></i>Configuración</a></li>
-      <li><a href="#"><i class="fas fa-folder"></i>Dashboard</a></li>
-      <li><a href="#"><i class="fas fa-tv"></i>Dashboard</a></li>
+  <div class="sidebar">
+    <div class="logo"></div>
+    <ul class="menu">
+      <li class="active">
+        <a href="#">
+          <i class="fas fa-tachometer-alt"></i>
+          <span>Dashboard</span>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <i class="fas fa-user"></i>
+          <span>Perfil</span>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <i class="fas fa-chart-bar"></i>
+          <span>Estadisticas</span>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <i class="fas fa-cog"></i>
+          <span>Configuración</span>
+        </a>
+      </li>
+      <li class="logout">
+        <a href="<?php echo base_url("/logout") ?>">
+          <i class="fas fa-sign-out-alt"></i>
+          <span>Cerrar sesion</span>
+        </a>
+      </li>
     </ul>
-    <a class="btn btn-danger" href="<?php echo base_url("/logout") ?>"> <i class="fa-solid fa-door-open"> </i> Salir </a>
   </div>
-</label>
+
+</body>
+
+</html>

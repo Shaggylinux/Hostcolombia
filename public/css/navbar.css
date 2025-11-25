@@ -1,143 +1,85 @@
-/* fuentes */
-
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
 
+
 *{
-    margin: 0;
-    padding: 0;
+    margin:0;
+    padding:0;
     box-sizing: border-box;
+    border: none;
+    outline: none;
     font-family: 'Poppins', sans-serif;
 }
 
 body{
-    background-color: white;
+    display: flex;
+
 }
 
-.slide{
+.sidebar{
+    position:sticky;
+    top:0;
+    left: 0;
+    bottom:0;
+    width: 110px;
     height: 100vh;
-    width: 240px;
-    position: fixed;
-    background-color: white;
-    transition:  0.5s ease;
-    transform:translateX(-240px)
+    padding:0 1.7rem;
+    color: #fff;
+    overflow: hidden;
+    transition: all 0.5s linear;
+    background:rgba(113, 99, 186, 255);
+}
+
+.sidebar:hover{
+    width: 250px;
+    transition:0.5s;
+}
+
+.logo{
+    height: 80px;
+    padding:16px;
+
 }
 
 .menu{
-    color: #8000ff;
-    font-weight:800;
-    text-align: center;
-    padding: 10px 0;
-    padding-right: 30px;
-    pointer-events: none;
-
+height: 88%;
+position:relative;
+list-style:none;
+padding:0;
 }
 
-ul {
-    padding-left: 0 !important;   /* ⭐ Elimina el espacio del ul */
-    margin-left: 0 !important;
+.menu li{
+padding: 1rem;
+margin: 8px 0;
+border-radius:8px;
+transition: all 0.5s ease-in-out;
 }
 
-
-ul li{
-    list-style: none;
-
+.menu li:hover,
+ .active{
+    background: #e0e0e058;
 }
 
-ul li a{
-    display: flex;
+.menu a{
+    color:#fff;
+    font-size: 14px;
+    text-decoration:none;
+    display:flex;
     align-items: center;
-    gap: 12px;             /* espacio entre icono y texto */
-    padding: 10px 15px;    /* padding normal */
-    color:#011a41;
-    font-weight:500;
-    text-decoration: none;
-    transition: 0.2s ease-out;
+    gap:1.5rem
 }
 
-ul li a i{
-    width: auto;           /* ⭐ ya no empuja el texto */
-    font-size: 20px;       /* iconos parecidos al ejemplo */
-    display: flex;
-    align-items: center;
+.menu a span{
+    overflow:hidden;
+
 }
 
-ul li:hover a {
-    background-color: #8000ff;
-    color: #fff;
+.menu a i{
+    font-size:1.2rem;
 }
 
-
-input{
-    position: absolute;
-    opacity: 0;
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
-    z-index: 2;
-}
-
-.toggle{
-    display: block;
-    position: absolute;
-    height: 30px;
-    width: 30px;
-    top:37px;
-    left: 15px;
-    z-index: 1;
-    cursor: pointer;
-    border-radius: 2px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0,0,0,0.3);
-}
-
-.toggle .common{
-    position: absolute;
-    height: 2px;
-    width:20px;
-    background-color: #8000ff;
-    border-radius: 50px;
-    transition: 0.3s ease;
-}
-
-.toggle .top_line{
-    top:30%;
-    left:50%;
-    transform: translate(-50%, -50%)
-}
-
-.toggle .middle_line{
-    top:50%;
-    left:50%;
-    transform: translate(-50%, -50%)
-}
-
-.toggle .bottom_line{
-    top:70%;
-    left:50%;
-    transform: translate(-50%, -50%)
-}
-
-input:checked ~ .toggle .top_line{
-    left: 2px;
-    top: 14px;
-    width:25px;
-    transform:rotate(45deg);
-}
-
-input:checked ~ .toggle .bottom_line{
-    left: 2px;
-    top: 14px;
-    width:25px;
-    transform:rotate(-45deg);
-}
-
-input:checked ~ .toggle .middle_line{
-   opacity: 0;
-    transform:translateX(20px);
-}
-
-input:checked ~ .slide{
-    transform: translateX(0);
-    box-shadow: 0 0 15px rgba(0,0,0,0.3);
-   
+.logout{
+    position:absolute;
+    bottom:0;
+    left: 0;
+    width: 100%;
 }
