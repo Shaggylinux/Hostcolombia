@@ -14,10 +14,9 @@
             <h1 class="text-center">MAQUINAS CREADAS</h1>
             <?php foreach($servidores as $te):?>
                 <div class="input-group flex-nowrap mb-3">
-                    <button class="btn btn-primary form-control"> <?php echo $te["nombre"]?> </button> </a>
+                    <a class="btn btn-primary form-control" href="<?php echo base_url("/vista/panel-control/".$te["id"]) ?>">  <?php echo $te["nombre"]?> </a>
                     <span class="input-group-text"> <a href="<?php echo base_url("/vista/editar-server/".$te["id"]) ?>"> <i class="fa-solid fa-pencil"></i> </a> </span>
                 </div>
-            
             <?php endforeach?>
             <a href="<?php echo base_url("/vista/usuario-server")?>" class="btn btn-success form-control shadow"> <i class="fa-solid fa-plus"></i> </a>
         </div>

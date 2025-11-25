@@ -31,3 +31,6 @@ $routes->get('/vista/administrador-usuarios', 'Administrador::index');
 
 $routes->get("/vista/editar-server/(:num)","Login::editar/$1");
 $routes->post("/server/actualizar/(:num)","Login::actualizar/$1");
+
+// $routes->get("/vista/panel-control","Usuario::panelcontrol");
+$routes->get('/vista/panel-control/(:num)', 'Usuario::panelcontrol/$1');

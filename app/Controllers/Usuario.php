@@ -1,36 +1,35 @@
 <?php
     namespace App\Controllers;
     use Config\Database;
-    use App\Models\UsuarioModel;
     use App\Models\UsuarioServerModel;
 
     class Usuario extends BaseController{
-            public function usuariovista(){
-        if (session()->has("usuarios")) {
-        
-            $usuario = session()->get("usuarios");
-            $idusuario = $usuario["id"]; 
-        
-            $UsuarioServer = new UsuarioServerModel();
+        public function usuariovista(){
+            if (session()->has("usuarios")) {
             
-            $servidores = $UsuarioServer
-                            ->where("id_usuario", $idusuario)
-                            ->findAll();
+                $usuario = session()->get("usuarios");
+                $idusuario = $usuario["id"];
             
-            $db = Database::connect();
-            $query = $db->query("SELECT nombre FROM servidor");
-            $resultado = $query->getResult();
-        
-            $data = [
-                "nombreserver" => $resultado,
-                "Userid"       => $idusuario,
-                "servidores"   => $servidores
-            ];
-        
-            return view('/vista/usuario', $data);
+                $UsuarioServer = new UsuarioServerModel();
+
+                $servidores = $UsuarioServer
+                                ->where("id_usuario", $idusuario)
+                                ->findAll();
+
+                $db = Database::connect();
+                $query = $db->query("SELECT nombre FROM servidor");
+                $resultado = $query->getResult();
+            
+                $data = [
+                    "nombreserver" => $resultado,
+                    "Userid"       => $idusuario,
+                    "servidores"   => $servidores
+                ];
+            
+                return view('/vista/usuario', $data);
             }
-                return view("/vista/error");
-            }
+                    return view("/vista/error");
+                }
 
 
         public function administradorvista(){
@@ -43,6 +42,28 @@
             }
                 return view("/vista/error");
             }
+        
+        private function checkServerStatus($url, $port = 443, $timeout = 5){
+            $fp = @fsockopen($url, $port, $errno, $errstr, $timeout);
+            if($fp){
+                fclose($fp);
+                return true;
+            } else
+            return false;
+        }
 
+        public function panelcontrol($id){
+            $db = Database::connect();
+        
+            $query = $db->query("SELECT * FROM servidor WHERE id = ?", [$id]);
+            $servidor = $query->getRow();
+        
+            $online = $this->checkServerStatus($servidor -> dominio);
+        
+            return view("vista/panel-control", [
+                "servidor" => $servidor,
+                "online" => $online
+            ]);
+        }
     }
 ?>
