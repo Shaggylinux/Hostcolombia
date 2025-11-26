@@ -122,7 +122,7 @@ $imagen = !empty($foto) ? $foto : 'nino.png';
                         </div>
 
 
-                        <span class="card-detail">**** **** <?= substr($te["id"], -4) ?></span>
+                        <span class="card-detail">**** <?= substr($te["id"], -4) ?></span>
                     </div>
                 <?php endforeach; ?>
             </div>
