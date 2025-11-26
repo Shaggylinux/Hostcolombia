@@ -33,3 +33,6 @@ $routes->get("/vista/editar-server/(:num)","Usuario::editar/$1");
 $routes->post("/server/actualizar/(:num)","Usuario::actualizar/$1");
 
 $routes->get('/vista/panel-control/(:num)', 'Usuario::panelcontrol/$1');
+
+$routes->get("/administrador/exportar_servidor","Administrador::exportar_servidor");
+$routes->get("/administrador/exportar_usuarios","Administrador::exportar_usuarios");
