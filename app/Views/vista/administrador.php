@@ -20,7 +20,6 @@
                         <td> Nombre      </td>
                         <td> Descripcion </td>
                         <td> Dominio     </td>
-                        <td> D.N.S       </td>
                         <td> Accion      </td>
                     </tr>
                 </thead>
@@ -31,7 +30,6 @@
                         <td> <?php echo $t -> nombre      ?> </td>
                         <td> <?php echo $t -> descripcion ?> </td>
                         <td> <?php echo $t -> dominio     ?> </td>
-                        <td> <?php echo $t -> dns1 ?>.<?php echo $t -> dns2 ?>.<?php echo $t -> dns3 ?>.<?php echo $t -> dns4 ?> </td>
                         <td>
                             <a href="<?php echo base_url('login/eliminar/'.$t->id)?>" class="btn btn-danger btn-sm shadow-sm"> <i class="fa-solid fa-trash"></i> </a>
                         </td>

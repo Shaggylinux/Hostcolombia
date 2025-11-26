@@ -24,13 +24,12 @@ $routes->get('/vista/administrador', 'Usuario::administradorvista');
 $routes->get('/vista/error', 'Login::usuariovista');
 $routes->get('/general/precios', 'Precios::index');
 
-$routes->get("/login/eliminar/(:num)","Login::eliminar/$1");
+$routes->get("/login/eliminar/(:num)","Usuario::eliminar/$1");
 $routes->get("/usuario/eliminar/(:num)","Administrador::eliminar/$1");
 
 $routes->get('/vista/administrador-usuarios', 'Administrador::index');
 
-$routes->get("/vista/editar-server/(:num)","Login::editar/$1");
-$routes->post("/server/actualizar/(:num)","Login::actualizar/$1");
+$routes->get("/vista/editar-server/(:num)","Usuario::editar/$1");
+$routes->post("/server/actualizar/(:num)","Usuario::actualizar/$1");
 
-// $routes->get("/vista/panel-control","Usuario::panelcontrol");
 $routes->get('/vista/panel-control/(:num)', 'Usuario::panelcontrol/$1');

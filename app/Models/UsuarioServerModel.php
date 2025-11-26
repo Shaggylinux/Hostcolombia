@@ -9,11 +9,7 @@
                                     "nombre",
                                     "descripcion",
                                     "dominio",
-                                    "id_usuario",
-                                    "dns1",
-                                    "dns2",
-                                    "dns3",
-                                    "dns4"];
+                                    "id_usuario"];
                                     
         public $timestamps = false;
     }

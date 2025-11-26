@@ -27,17 +27,6 @@
                 <input type="text" class="form-control" placeholder="Dominio.com"
                 name="dominio" value="<?php echo $server["dominio"]?>" >
             </div>
-            <h3 class="text-center">DNS:</h3>
-            <div class="input-group mb-3 shadow">
-                <input type="text" class="form-control" maxlength="3" name="dns1" value="<?php echo $server["dns1"]?>">
-                <span class="input-group-text"><i class="fa-solid fa-slash fa-flip-horizontal"></i></span>
-                <input type="text" class="form-control" maxlength="3" name="dns2" value="<?php echo $server["dns2"]?>">
-                <span class="input-group-text"><i class="fa-solid fa-slash fa-flip-horizontal"></i></span>
-                <input type="text" class="form-control" maxlength="3" name="dns3" value="<?php echo $server["dns3"]?>">
-                <span class="input-group-text"><i class="fa-solid fa-slash fa-flip-horizontal"></i></span>
-                <input type="text" class="form-control" maxlength="3" name="dns4" value="<?php echo $server["dns4"]?>">
-            </div>
-
             <div>
                 <button type="submit" class="btn btn-success form-control shadow"> <i class="fa-solid fa-pencil"></i> Actualizar </button>
             </div>

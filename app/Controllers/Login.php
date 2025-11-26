@@ -9,8 +9,6 @@
         return view('login/login');
         }
 
-
-
         public function verificar() {
             $usuario  = $this -> request -> getPost('nombreusuario');
             $password = $this -> request -> getPost('clave');
@@ -36,23 +34,5 @@
         public function logout(){
             session() -> destroy();
             return redirect() -> to("/login/login");
-        }
-
-        public function eliminar($id){
-            $model = new UsuarioServerModel();
-            $model -> delete($id);
-            return redirect() -> to("/vista/administrador");
-        }
-
-        public function editar($id){
-            $model = new UsuarioServerModel();
-            $data = ["server" => $model -> find($id)];
-            return view("/vista/editar-server", $data);
-        }
-
-        public function actualizar($id){
-            $model = new UsuarioServerModel();
-            $model -> update($id, $this -> request -> getPost());
-            return redirect() -> to("/vista/usuario");
         }
 }

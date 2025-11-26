@@ -20,10 +20,6 @@ create table servidor(
 	nombre varchar(45),
 	descripcion varchar(50),
 	dominio varchar(30),
-	dns1 varchar(3),
-	dns2 varchar(3),
-	dns3 varchar(3),
-	dns4 varchar(3),	
 	id_usuario int,
 	foreign key (id_usuario) references usuarios(id)
 );

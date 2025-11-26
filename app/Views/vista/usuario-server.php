@@ -24,17 +24,6 @@
                 <label class="input-group-text"> https://</label>
                 <input type="text" class="form-control" placeholder="Dominio.com" name="dominioserver" required>
             </div>
-            <h3 class="text-center">DNS:</h3>
-            <div class="input-group mb-3 shadow">
-                <input type="text" class="form-control" maxlength="3" name="dns1" required>
-                <span class="input-group-text"><i class="fa-solid fa-slash fa-flip-horizontal"></i></span>
-                <input type="text" class="form-control" maxlength="3" name="dns2" required>
-                <span class="input-group-text"><i class="fa-solid fa-slash fa-flip-horizontal"></i></span>
-                <input type="text" class="form-control" maxlength="3" name="dns3" required>
-                <span class="input-group-text"><i class="fa-solid fa-slash fa-flip-horizontal"></i></span>
-                <input type="text" class="form-control" maxlength="3" name="dns4" required>
-            </div>
-
             <div>
                 <button class="btn btn-success form-control shadow"> <i class="fa-solid fa-plus"></i> AGREGAR</button>
             </div>

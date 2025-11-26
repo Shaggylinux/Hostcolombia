@@ -42,6 +42,24 @@
             }
                 return view("/vista/error");
             }
+
+        public function eliminar($id){
+            $model = new UsuarioServerModel();
+            $model -> delete($id);
+            return redirect() -> to("/vista/administrador");
+        }
+
+        public function editar($id){
+            $model = new UsuarioServerModel();
+            $data = ["server" => $model -> find($id)];
+            return view("/vista/editar-server", $data);
+        }
+
+        public function actualizar($id){
+            $model = new UsuarioServerModel();
+            $model -> update($id, $this -> request -> getPost());
+            return redirect() -> to("/vista/usuario");
+        }
         
         private function checkServerStatus($url, $port = 443, $timeout = 5){
             $fp = @fsockopen($url, $port, $errno, $errstr, $timeout);
