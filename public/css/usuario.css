@@ -1,0 +1,160 @@
+.main--content{
+    position:relative;
+    background: #ebe9e9;
+    width:100%;
+    padding: 1rem
+}
+
+.header--wrapper img{
+ width:50px;
+ height: 50px;
+ cursor: pointer;
+ border-radius: 50%;
+}
+
+.header--wrapper {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    background: #fff;
+    border-radius: 10px;
+    padding:10px 2rem;
+    margin-bottom:1rem;
+}
+
+.header--title{
+    color:rgba(113, 99, 186, 255)
+}
+
+.user--info{
+    display: flex;
+    align-items:center;
+    gap:1rem;
+}
+
+.searh--box{
+    background: rgb(237, 237, 237);
+    border-radius: 15px;
+    color:rgba(113, 99, 186, 255);
+    display: flex;
+    align-items: center;
+    gap:5px;
+    padding: 4px 12px;
+}
+
+.searh--box input{
+    background: transparent;
+    padding:10px;
+}
+
+.searh--box i {
+    font-size:1.2rem ;
+    cursor: pointer;
+    transition:all 0.5s ease-out;
+
+}
+
+.searh--box i:hover{
+    transform: scale(1.2);
+}
+
+
+
+/*tarjetas de contenido*/
+
+.card--container{
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+.card--wrapper{
+    display: flex;
+    flex-wrap:wrap;
+    gap:1rem
+}
+
+.main--title{
+    color: rgba(113, 99, 186, 255);
+    padding-bottom: 10px;
+    font-size:15px;
+}
+
+.payment--card{
+    background: rgb(229, 223, 223);
+    border-radius:10px;
+    padding:1.2rem;
+    width: 290px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.5s ease-in-out;
+}
+
+.payment--card:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.card--header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:20px;
+}
+
+.amount{
+    display:flex;
+    flex-direction: column;
+}
+
+.title{
+    font-size: 12px;
+    font-weight: 200;
+}
+
+.amount--value{
+    font-size: 24px;
+    font-family: "courier new", Courier, monospace;
+    font-weight: 600;
+}
+
+/* .icon {
+    color:#fff;
+    padding:1rem;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    background: red;
+} */
+
+
+.add-btn {
+    background: red;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+.add-btn i {
+    color: #fff;
+    font-size: 1.6rem;
+    
+}
+
+
+.card--detail{
+    font-size:;
+}
+
+
+
+
