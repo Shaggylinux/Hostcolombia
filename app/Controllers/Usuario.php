@@ -88,7 +88,7 @@ class Usuario extends BaseController{
 
     public function actualizar($id){
         $model = new UsuarioServerModel();
-        $model->update($id, $this->request->getPost());
+        $model -> update($id, $this -> request -> getPost());
         return redirect()->to("/vista/usuario");
     }
 
