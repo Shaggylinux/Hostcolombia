@@ -2,14 +2,13 @@
     namespace App\Controllers;
     use App\Controllers\BaseController;
     use App\Models\UsuarioModel;
-    use App\Models\UsuarioServerModel;
     class Login extends BaseController {
 
     public function index() {
         return view('login/login');
         }
 
-        public function verificar() {
+    public function verificar() {
             $usuario  = $this -> request -> getPost('nombreusuario');
             $password = $this -> request -> getPost('clave');
         
@@ -31,7 +30,7 @@
             }
         }
 
-        public function logout(){
+    public function logout(){
             session() -> destroy();
             return redirect() -> to("/login/login");
         }
