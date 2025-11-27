@@ -1,83 +1,122 @@
 <?php
-    namespace App\Controllers;
-    use Config\Database;
-    use App\Models\UsuarioServerModel;
 
-    class Usuario extends BaseController{
-        public function usuariovista(){
-            if (session() -> has("usuarios")) {
+namespace App\Controllers;
 
-                $usuario = session() -> get("usuarios");
-                $idusuario = $usuario["id"];
+use Config\Database;
+use App\Models\UsuarioServerModel;
 
-                $UsuarioServer = new UsuarioServerModel();
+class Usuario extends BaseController
+{
+    public function usuariovista()
+    {
+        if (session()->has("usuarios")) {
 
-                $servidores = $UsuarioServer
-                    -> where("id_usuario", $idusuario)
-                    -> findAll();
+            $usuario = session()->get("usuarios");
+            $idusuario = $usuario["id"];
 
-                $db = Database::connect();
-                $query = $db->query("SELECT nombre FROM servidor");
-                $resultado = $query->getResult();
+            $UsuarioServer = new UsuarioServerModel();
 
-                $data = [
-                    "nombreserver" => $resultado,
-                    "Userid"       => $idusuario,
-                    "servidores"   => $servidores
-                ];
+            $servidores = $UsuarioServer
+                ->where("id_usuario", $idusuario)
+                ->findAll();
 
-                return view('/vista/usuario', $data);
+            $coloresClaros = [
+
+                "light-red",
+                "light-blue",
+                "light-green",
+                "light-yellow",
+                "light-purple",
+            ];
+
+            foreach ($servidores as &$s) {
+                $s["color"] = $coloresClaros[array_rand($coloresClaros)];
             }
-            return view("/vista/error");
-        }
 
-        public function administradorvista() {
-            if (session("perfil") == 1) {
-                $db        = Database::connect();
-                $query     = $db    -> query("SELECT * FROM servidor order by id_usuario asc");
-                $resultado = $query -> getResult();
-                $data      = ["todo" => $resultado];
-                return view('/vista/administrador', $data);
+            $coloresOscuros = [
+
+                "dark-red",
+                "dark-blue",
+                "dark-green",
+                "dark-purple",
+
+            ];
+
+            foreach ($servidores as &$o) {
+                $o["oscuros"] = $coloresOscuros[array_rand($coloresOscuros)];
             }
-            return view("/vista/error");
-        }
 
-        public function eliminar($id) {
-            $model = new UsuarioServerModel();
-            $model -> delete($id);
-            return redirect()->to("/vista/administrador");
-        }
 
-        public function editar($id) {
-            $model = new UsuarioServerModel() -> find($id);
-            $data  = ["server" => $model];
-            return view("/vista/editar-server", $data);
-        }
+            $db = Database::connect();
+            $query = $db->query("SELECT nombre FROM servidor");
+            $resultado = $query->getResult();
 
-        public function actualizar($id) {
-            $model = new UsuarioServerModel();
-            $model -> update($id, $this -> request -> getPost());
-            return redirect() -> to("/vista/usuario");
-        }
+            $data = [
+                "nombreserver" => $resultado,
+                "Userid"       => $idusuario,
+                "servidores"   => $servidores
+            ];
 
-        private function checkServerStatus($url, $port = 443, $timeout = 5) {
-            $fp = @fsockopen($url, $port, $errno, $errstr, $timeout);
-            if ($fp) {
-                fclose($fp);
-                return true;
-            } else
-                return false;
+            return view('/vista/usuario', $data);
         }
+        return view("/vista/error");
+    }
 
-        public function panelcontrol($id) {
-            $db       = Database::connect();
-            $query    = $db    -> query("SELECT * FROM servidor WHERE id = ?", [$id]);
-            $servidor = $query -> getRow();
-            $online   = $this  -> checkServerStatus($servidor -> dominio);
-
-            return view("vista/panel-control", [
-                "servidor" => $servidor,
-                "online"   => $online
-            ]);
+    public function administradorvista()
+    {
+        if (session("perfil") == 1) {
+            $db        = Database::connect();
+            $query     = $db->query("SELECT * FROM servidor order by id_usuario asc");
+            $resultado = $query->getResult();
+            $data      = ["todo" => $resultado];
+            return view('/vista/administrador', $data);
         }
+        return view("/vista/error");
+    }
+
+    public function eliminar($id)
+    {
+        $model = new UsuarioServerModel();
+        $model->delete($id);
+        return redirect()->to("/vista/administrador");
+    }
+
+    public function editar($id)
+    {
+        $model = new UsuarioServerModel()->find($id);
+        $data  = ["server" => $model];
+        return view("/vista/editar-server", $data);
+    }
+
+    public function actualizar($id)
+    {
+        $model = new UsuarioServerModel();
+        $model->update($id, $this->request->getPost());
+        return redirect()->to("/vista/usuario");
+    }
+
+    private function checkServerStatus($url, $port = 443, $timeout = 5)
+    {
+        $fp = @fsockopen($url, $port, $errno, $errstr, $timeout);
+        if ($fp) {
+            fclose($fp);
+            return true;
+        } else
+            return false;
+    }
+
+
+
+    public function panelcontrol($id)
+    {
+        $db       = Database::connect();
+        $query    = $db->query("SELECT * FROM servidor WHERE id = ?", [$id]);
+        $servidor = $query->getRow();
+        $online   = $this->checkServerStatus($servidor->dominio);
+
+        return view("vista/panel-control", [
+            "servidor" => $servidor,
+            "online"   => $online
+        ]);
+    }
 }
