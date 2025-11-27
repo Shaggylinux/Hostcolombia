@@ -81,7 +81,11 @@ $imagen = !empty($foto) ? $foto : 'nino.png';
                             <tr>
                                 <td><?= $te["id"] ?></td>
                                 <td><?= $te["nombre"] ?></td>
-                                <td><span class="status active">Activo</span></td>
+                                <?php if($te["online"]):?>
+                                    <td><span class="status active">Activo</span></td>
+                                <?php else:?>
+                                    <td><span class="status active">Apagado</span></td>
+                                <?php endif?>
                                 <td>
                                     <a href="<?= base_url("/vista/editar-server/" . $te["id"]) ?>" class="edit--btn"><i class="fa-solid fa-pencil"></i></a>
                                     <a href="<?= base_url("/vista/eliminar/" . $te["id"]) ?>" class="delete--btn"><i class="fa-solid fa-trash"></i></a>

@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css">
 
 
-  <?= $this->renderSection('css') ?>
+<?= $this->renderSection('css') ?>
 </head>
 
 <body>
@@ -17,7 +17,6 @@
   <?= $this->include('plantilla/navbar-normal') ?>
   <?= $this->renderSection('contenido') ?>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
   <?= $this->renderSection('js') ?>
 
 </body>

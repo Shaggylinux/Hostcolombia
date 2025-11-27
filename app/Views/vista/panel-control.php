@@ -6,12 +6,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Panel <?php  echo $servidor["id"]?></title>
 </head>
 <body>
     <h1>Panel de control</h1>
-<h1><?= $servidor->nombre ?></h1>
-<a href="https://<?= $servidor->dominio ?>"> click</a>
+<h1><?php echo $servidor["nombre"] ?></h1>
+<a href="https://<?php echo $servidor["dominio"] ?>"> click</a>
 
 <?php if ($online): ?>
     <span class="text-success fw-bold">ONLINE</span>

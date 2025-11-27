@@ -1,14 +1,11 @@
-<<<<<<< HEAD
 <!doctype html>
 <html lang="es">
-=======
 <?= $this->extend("plantilla/layout") ?>
 
 <!-- 👇 Sección para CSS -->
 <?= $this->section("css") ?>
 <link rel="stylesheet" href="<?= base_url('css/login.css') ?>">
 <?= $this->endSection() ?>
->>>>>>> fd10640749215cd07024ff6b77b1b6350e300702
 
 <!-- 👇 Contenido principal -->
 <?= $this->section("contenido") ?>
@@ -48,18 +45,15 @@
         </form>
 
         <footer class="footer-text mt-4">
-            © 2025 propiedad de SCRUM 4 o lo que sea.
+            © 2025 propiedad de SCRUM 4.
         </footer>
     </div>
 </div>
 
 <?= $this->endSection() ?>
 
-<<<<<<< HEAD
 </html>
-=======
 <!-- 👇 Sección para JS -->
 <?= $this->section("js") ?>
 <script src="<?= base_url('js/login.js') ?>"></script>
 <?= $this->endSection() ?>
->>>>>>> fd10640749215cd07024ff6b77b1b6350e300702
