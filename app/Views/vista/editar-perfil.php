@@ -22,7 +22,7 @@
             <div class="input-group mb-3 shadow">
                 <span class="input-group-text"><i class="fa-solid fa-pencil"></i></span>
                 <input type="text" class="form-control" placeholder="Breve descripcion"
-                    name="descripcion" value="<?php echo $server["descripcion"] ?>">
+                    name="descripcion" value="<?php echo $server["descripcion"] ?>"> hola esto es una prueba
             </div>
             <div class="input-group mb-3 shadow">
                 <label class="input-group-text"> https://</label>
