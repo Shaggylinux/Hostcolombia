@@ -27,6 +27,18 @@ body{
     font-weight: bold;
 }
 
+ul.nav-link{
+    padding-top: 10px;
+    margin: 0;
+}
+
+.menu {
+    height: 90%;
+    position: relative; /* AÑADIR */
+    list-style: none;
+    padding: 0;
+}
+
 
 .nav-link{
     padding-top: 15px;
