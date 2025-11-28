@@ -1,17 +1,38 @@
 /* ====== ESTILOS GENERALES ====== */
 
-body {
-  margin: 0;
-  height: 100vh;
-  display: flex;
+
+
+/* body {
+   height: 100vh;
   justify-content: center;
-  align-items: center;
+  align-items: center; 
   font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(135deg, #1e3a8a, #111827);
+   background: linear-gradient(135deg, #1e3a8a, #111827);
+} */
+ 
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.login-page {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #1e3a8a, #111827);
 }
 
 
-body {
+
+.login-wrapper{
+    margin-top: 0px;
+   
+}
+
+
+/* body {
   background-color: #f3f4f6;
   font-family: 'Segoe UI', sans-serif;
   margin: 0;
@@ -19,7 +40,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-}
+} */
 
 /* ====== CONTENEDOR PRINCIPAL ====== */
 .login-wrapper {
