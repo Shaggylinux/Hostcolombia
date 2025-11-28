@@ -12,9 +12,13 @@
 <body>
 
   <div class="sidebar">
+    <div class="logo"></div>
     <ul class="menu">
       <li class="active">
         <a href="<?php echo base_url("/vista/usuario") ?>">
+
+          <a href="<?= base_url("/vista/usuario") ?>">
+
             <i class="fas fa-tachometer-alt"></i>
             <span>Dashboard</span>
           </a>
@@ -31,12 +35,6 @@
           <span>Estadisticas</span>
         </a>
       </li>
-      <!-- <li>
-        <a href="#">
-          <i class="fas fa-cog"></i>
-          <span>Configuración</span>
-        </a>
-      </li> -->
       <li class="logout">
         <a href="<?php echo base_url("/logout") ?>">
           <i class="fas fa-sign-out-alt"></i>
