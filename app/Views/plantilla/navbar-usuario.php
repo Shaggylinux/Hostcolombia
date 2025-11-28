@@ -15,9 +15,7 @@
       <li class="active">
         <a href="<?php echo base_url("/vista/usuario") ?>">
           <a href="<?= base_url("/vista/usuario") ?>">
-
           <a href="<?= base_url("/vista/usuario") ?>">
-
             <i class="fas fa-tachometer-alt"></i>
             <span>Dashboard</span>
           </a>

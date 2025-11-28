@@ -33,11 +33,8 @@
 <body>
 
   <nav class="navbar">
-    <div class="logo">My site web</div>
+    <a href="/"> <h1 class="logo"> My site web </h1> </a>
     <ul class="nav-link">
-      <li> <a class="nav-link" href="/"> Home </a></li>
-      <li><a href="#">Descarga</a></li>
-      <li><a class="nav-link" href="<?php echo base_url("/general/precios") ?>"> Planes </a></li>
       <li><a class="nav-link active" href="<?php echo base_url("/login/login") ?>"> Iniciar Sesion </a></li>
     </ul>
   </nav>
