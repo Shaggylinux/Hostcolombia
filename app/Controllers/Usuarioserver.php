@@ -4,7 +4,10 @@
 
     class Usuarioserver extends BaseController{
         public function index(){
-            return view("/vista/usuario-server");
+            if (session() -> has("usuarios")){
+                return view("/vista/usuario-server");
+            }
+            return view("/vista/error");
         }
 
         public function guardar(){

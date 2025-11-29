@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Models\UsuarioModel;
 use Config\Database;
 use App\Models\UsuarioServerModel;
 
@@ -16,16 +17,16 @@ class Usuario extends BaseController{
     }
 
     public function usuariovista(){
-        if (session()->has("usuarios")) {
-
-            $usuario = session()->get("usuarios");
+        if (session() -> has("usuarios")) {
+            
+            $usuario   = session() -> get("usuarios");
             $idusuario = $usuario["id"];
-
+            
+            
             $UsuarioServer = new UsuarioServerModel();
-
             $servidores = $UsuarioServer
-                ->where("id_usuario", $idusuario)
-                ->findAll();
+                -> where("id_usuario", $idusuario)
+                -> findAll();
 
             $coloresClaros = [
                 "light-red",
@@ -48,9 +49,9 @@ class Usuario extends BaseController{
                 $s["online"]  = $this -> checkServerStatus($s["dominio"]);
             }
 
-            $db = Database::connect();
-            $query = $db->query("SELECT nombre,dominio FROM servidor");
-            $resultado = $query->getResult();
+            $db        = Database::connect();
+            $query     = $db    -> query("SELECT nombre,dominio FROM servidor");
+            $resultado = $query -> getResult();
 
             $data = [
                 "nombreserver" => $resultado,
@@ -75,30 +76,42 @@ class Usuario extends BaseController{
     }
 
     public function eliminar($id){
-        $model = new UsuarioServerModel();
-        $model->delete($id);
-        return redirect()->to("/vista/administrador");
+        new UsuarioServerModel() -> delete($id);
+        return redirect() -> to("/vista/administrador");
     }
 
-    public function editar($id){
-        $model = new UsuarioServerModel()->find($id);
+    public function editar_server($id){
+        $model = new UsuarioServerModel() -> find($id);
         $data  = ["server" => $model];
         return view("/vista/editar-server", $data);
     }
 
-    public function actualizar($id){
-        $model = new UsuarioServerModel();
-        $model -> update($id, $this -> request -> getPost());
-        return redirect()->to("/vista/usuario");
+    public function actualizar_server($id){
+        new UsuarioServerModel() -> update($id, $this -> request -> getPost());
+        return redirect() -> to("/vista/usuario");
     }
 
     public function panelcontrol($id) {
-        $model = new UsuarioServerModel();
-        $servidor = $model->find("$id");
-        $online   = $this -> checkServerStatus($servidor["dominio"]);
-        return view("vista/panel-control", [
+        $model    = new UsuarioServerModel();
+        $servidor = $model -> find("$id");
+        $online   = $this  -> checkServerStatus($servidor["dominio"]);
+        
+        return view("/vista/panel-control", [
             "servidor" => $servidor,
             "online"   => $online
         ]);
+    }
+
+    public function editar_usuario($id){
+        $id    = session() -> get("id");
+        $model = new UsuarioModel() -> find($id);
+        $data  = ["usuario" => $model];
+        return view("/vista/editar-usuario", $data);
+    }
+
+    public function actualizar_usuario($id){
+        new UsuarioModel() -> update($id, $this -> request -> getPost());
+        session()          -> destroy();
+        return redirect()  -> to("/login/login");
     }
 }

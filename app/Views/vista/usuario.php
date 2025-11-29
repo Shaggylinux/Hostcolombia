@@ -2,7 +2,7 @@
 <?php echo $this->section("contenido") ?>
 
 <?php
-$imagen = !empty($foto) ? $foto : 'nino.png';
+    $imagen = !empty($foto) ? $foto : 'nino.png';
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -13,7 +13,6 @@ $imagen = !empty($foto) ? $foto : 'nino.png';
     <title>Dashboard</title>
     <link rel="stylesheet" href="<?= base_url('css/usuario.css') ?>" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
 </head>
 
 <body>

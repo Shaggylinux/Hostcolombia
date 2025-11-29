@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editar servidor</title>
+    <title> Editar servidor </title>
 </head>
 <body>
     <div class="container border mx-auto p-5 m-5 rounded-3 shadow" style="width: 500px;">

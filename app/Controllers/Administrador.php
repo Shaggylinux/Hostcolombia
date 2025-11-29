@@ -13,13 +13,9 @@
         }
 
         public function eliminar($id) {
-            $servidores = new UsuarioServerModel();
-            $servidores -> where('id_usuario', $id) -> delete();
-        
-            $usuarios = new UsuarioModel();
-            $usuarios -> delete($id);
-        
-            return redirect() -> to("/vista/administrador-usuarios");
+            new UsuarioServerModel() -> where('id_usuario', $id) -> delete();
+            new UsuarioModel() -> delete($id);
+            return redirect()  -> to("/vista/administrador-usuarios");
         }
 
         public function exportar_usuarios(){
