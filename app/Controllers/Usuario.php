@@ -75,11 +75,6 @@ class Usuario extends BaseController{
         return view("/vista/error");
     }
 
-    public function eliminar($id){
-        new UsuarioServerModel() -> delete($id);
-        return redirect() -> to("/vista/administrador");
-    }
-
     public function editar_server($id){
         $model = new UsuarioServerModel() -> find($id);
         $data  = ["server" => $model];

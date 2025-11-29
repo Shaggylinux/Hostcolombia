@@ -23,9 +23,9 @@ $routes -> get("/vista/administrador", "Usuario::administradorvista");
  
 $routes -> get("/vista/error", "Login::usuariovista");
 $routes -> get("/general/precios", "Precios::index");
- 
-$routes -> get("/login/eliminar/(:num)", "Usuario::eliminar/$1");
-$routes -> get("/usuario/eliminar/(:num)", "Administrador::eliminar/$1");
+
+$routes -> get("/usuario/eliminar/(:num)",  "Administrador::eliminar_usuario/$1");
+$routes -> get("/servidor/eliminar/(:num)", "Administrador::eliminar_servidor/$1");
  
 $routes -> get("/vista/administrador-usuarios", "Administrador::index");
  

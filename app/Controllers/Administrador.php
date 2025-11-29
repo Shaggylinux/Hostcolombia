@@ -12,7 +12,12 @@
             return view("/vista/administrador-usuarios", $data);
         }
 
-        public function eliminar($id) {
+        public function eliminar_servidor($id){
+            new UsuarioServerModel() -> delete($id);
+            return redirect() -> to("/vista/administrador");
+        }
+
+        public function eliminar_usuario($id) {
             new UsuarioServerModel() -> where('id_usuario', $id) -> delete();
             new UsuarioModel() -> delete($id);
             return redirect()  -> to("/vista/administrador-usuarios");
