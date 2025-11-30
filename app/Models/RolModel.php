@@ -3,9 +3,9 @@
     use CodeIgniter\Model;
 
     class RolModel extends Model{
-        protected $table = "perfil";
-        protected $primaryKey = "id";
-        protected $allowedFields = ["descripcion"];
-        public $timestamps = false;
+        protected $table         = "perfil";
+        protected $primaryKey    = "id";
+        protected $allowedFields = ["id"];
+        public $timestamps       = false;
     }
 ?>

@@ -1,6 +1,7 @@
 <?php
     namespace App\Controllers;
     use App\Models\UsuarioModel;
+    use App\Models\RolModel;
 
     class CrearCuenta extends BaseController{
         public function index(){
@@ -8,21 +9,26 @@
         }
 
         public function guardar() {
-            $model = new UsuarioModel();
+            $ModelUsuario = new UsuarioModel();
         
-            $nombre         = $this -> request -> getPost('nombre');
-            $nombreusuario  = $this -> request -> getPost('nombreusuario');
-            $clave          = $this -> request -> getPost('clave');
-            $correo         = $this -> request -> getPost('correo');
+            $nombre         = $this -> request -> getPost("nombre");
+            $nombreusuario  = $this -> request -> getPost("nombreusuario");
+            $clave          = $this -> request -> getPost("clave");
+            $correo         = $this -> request -> getPost("correo");
 
-            $model -> insert([
-                'nombre'        => $nombre,
-                'nombreusuario' => $nombreusuario,
-                'clave'         => password_hash($clave, PASSWORD_DEFAULT),
-                'correo'        => $correo,
+            $ModelUsuario -> insert([
+                "nombre"        => $nombre,
+                "nombreusuario" => $nombreusuario,
+                "clave"         => password_hash($clave, PASSWORD_DEFAULT),
+                "correo"        => $correo,
+            ]);
+
+            $ModelRol = new RolModel();
+            $ModelRol -> insert([
+                "id" => $ModelUsuario -> getInsertID()
             ]);
         
-            return redirect() -> to('/login/crearcuenta');
+            return redirect() -> to("/login/crearcuenta");
         }
     }
 ?>
