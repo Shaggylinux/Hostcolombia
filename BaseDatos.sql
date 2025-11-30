@@ -1,11 +1,10 @@
-create database proyecto;
+create database if not exists proyecto;
 
-create table perfil(
+create table if not exists perfil(
 	id int primary key auto_increment,
-	descripcion text
 );
 
-create table usuarios(
+create table if not exists usuarios(
 	id int primary key auto_increment,
 	nombre varchar(20),
 	nombreusuario varchar(20),
@@ -15,7 +14,7 @@ create table usuarios(
 	foreign key (id_perfil) references perfil(id)
 );
 
-create table servidor(
+create table if not exists servidor(
 	id int primary key auto_increment,
 	nombre varchar(45),
 	descripcion varchar(50),
