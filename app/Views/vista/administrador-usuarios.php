@@ -12,7 +12,25 @@
 </head>
 <body>
     <h1 class="text-center"> Usuario </h1>
-    <a class="btn btn-primary" href="<?php echo base_url("/administrador/exportar_usuarios")?>"> Exportar usuarios </a>
+
+        <div class=" mt-3">
+            <form action="<?php echo base_url("/administrador/exportar_usuarios") ?>" method="post">
+                <div class="card p-3 shadow-sm">
+
+                    <h5>Selecciona las columnas a exportar:</h5>
+
+                    <label><input type="checkbox" name="columnas[]" value="id" checked> ID</label><br>
+                    <label><input type="checkbox" name="columnas[]" value="nombre" checked> Nombre</label><br>
+                    <label><input type="checkbox" name="columnas[]" value="nombreusuario" checked> Nombre de usuario</label><br>
+                    <label><input type="checkbox" name="columnas[]" value="correo" checked> Correo</label><br>
+
+                    <button class="btn btn-success mt-3">
+                        Descargar Excel
+                    </button>
+                </div>
+            </form>
+        </div>
+
     <div class="container  mt-4 shadow border p-4 rounded-5 border-5 mx-auto m-4">
         <table class="table table-striped table-hover table-bordered align-middle rounded text-center">
             <thead class="table-primary text-center table-holder">

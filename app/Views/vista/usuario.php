@@ -10,31 +10,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
+    <title> Panel de control </title>
     <link rel="stylesheet" href="<?= base_url('css/usuario.css') ?>" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
-
     <div class="main--content">
         <div class="header--wrapper">
             <div class="header--title">
-                <span>Primary</span>
-                <h2>Dashboard</h2>
+                <h2>Panel de control</h2>
             </div>
             <div class="user--info">
                 <div class="searh--box">
-                    <i class="fa-solid fa-search"></i>
-                    <input type="text" placeholder="Buscar...">
+                    <h3>Bienvenido : </h3>
+                        <h2> <?php echo $usuario["nombreusuario"] ?> </h2>
                 </div>
                 <img src="<?= base_url('imagenes/' . $imagen) ?>" alt="">
             </div>
         </div>
-
         <div class="card--container">
             <h3 class="main--title">CREADAS</h3>
-
             <div class="card--wrapper">
                 <div class="payment--card light-red">
                     <div class="card--header">
@@ -48,7 +44,6 @@
                     </div>
                     <span class="card--detail">Crea las maquinas que quieras</span>
                 </div>
-
                 <?php foreach ($servidores as $te): ?>
                     <div class="payment--card <?= $te['color'] ?>">
                         <div class="card--header">
@@ -78,16 +73,16 @@
                     <tbody>
                         <?php foreach ($servidores as $te): ?>
                             <tr>
-                                <td><?= $te["id"] ?></td>
-                                <td><?= $te["nombre"] ?></td>
+                                <td><?php echo $te["id"] ?></td>
+                                <td><?php echo $te["nombre"] ?></td>
                                 <?php if ($te["online"]): ?>
                                     <td><span class="status active">Activo</span></td>
                                 <?php else: ?>
                                     <td><span class="status active">Apagado</span></td>
                                 <?php endif ?>
                                 <td>
-                                    <a href="<?= base_url("/vista/editar-server/" . $te["id"]) ?>" class="edit--btn"><i class="fa-solid fa-pencil"></i></a
-                                        </td>
+                                    <a href="<?= base_url("/vista/editar-server/" . $te["id"]) ?>" class="edit--btn"><i class="fa-solid fa-pencil"></i></a>
+                                </td>
                             </tr>
                         <?php endforeach; ?>
                     </tbody>
@@ -95,8 +90,6 @@
             </div>
         </div>
 </body>
-
 </html>
-
 
 <?php echo $this->endSection() ?>
