@@ -57,6 +57,7 @@
                         "servidores"   => $servidores,
                         "usuario"      => $u
                     ];
+                session() -> destroy();
                 return view('/vista/usuario', $data);
             }
             return view("/vista/error-vistas");
