@@ -83,7 +83,7 @@
             if (session("id") != 1){
                 new UsuarioModel() -> update($id, $this -> request -> getPost());
                 session()          -> destroy();
-                return redirect()  -> to("/login/login");
+                return view("/vista/usuario-update");
             }
             return view("/vista/error-vistas");
         }
