@@ -22,7 +22,7 @@
                 $query     = $db     -> query("SELECT * FROM servidor order by id_usuario asc");
                 $resultado = $query  -> getResult();
                 $data      = ["todo" => $resultado];
-                return view('/vista/administrador', $data);
+                return view("/vista/administrador", $data);
             }
             return view("/vista/error-vistas");
         }
@@ -37,7 +37,7 @@
 
         public function eliminar_usuario($id) {
             if (session("id") == 1){
-                new UsuarioServerModel() -> where('id_usuario', $id) -> delete();
+                new UsuarioServerModel() -> where("id_usuario", $id) -> delete();
                 new UsuarioModel()       -> delete($id);
                 return redirect()        -> to("/vista/administrador-usuarios");
             }
@@ -52,7 +52,7 @@
             $columnas = $this -> request -> getPost("columnas");
 
             if (!$columnas || count($columnas) == 0) {
-                return "Debes seleccionar al menos una columna";
+                return "<h1>Debes seleccionar almenos una casilla</h1>";
             }
 
             $model   = new UsuarioModel();
@@ -61,15 +61,15 @@
             $spreadsheet = new Spreadsheet();
             $sheet       = $spreadsheet->getActiveSheet();
 
-            $col = 'A';
+            $col = "A";
             foreach ($columnas as $campo) {
-                $sheet -> setCellValue($col.'1', ucfirst($campo));
+                $sheet -> setCellValue($col."1", ucfirst($campo));
                 $col++;
             }
 
             $fila = 2;
             foreach ($usuarios as $u) {
-                $col = 'A';
+                $col = "A";
                 foreach ($columnas as $campo) {
                     $sheet -> setCellValue($col.$fila, $u[$campo]);
                     $col++;
@@ -105,15 +105,15 @@
             $spreadsheet = new Spreadsheet();
             $sheet = $spreadsheet -> getActiveSheet();
         
-            $col = 'A';
+            $col = "A";
             foreach ($columnas as $c) {
-                $sheet->setCellValue($col.'1', strtoupper($c));
+                $sheet->setCellValue($col."1", strtoupper($c));
                 $col++;
             }
         
             $fila = 2;
             foreach ($servidor as $s) {
-                $col = 'A';
+                $col = "A";
                 foreach ($columnas as $c) {
                     $sheet->setCellValue($col.$fila, $s[$c]);
                     $col++;
