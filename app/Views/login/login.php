@@ -14,7 +14,7 @@
         <div class="login-wrapper">
             <div class="login-card">
                 <div class="icon-circle">
-                    <i class="bi bi-briefcase-fill"></i>
+                    <img src="<?= base_url('imagenes/logo.png') ?>" alt="logo" style=":width: 12px;">
                 </div>
                 <h2 class="title">Iniciar sesión</h2>
                 <?php if (session('mensaje')): ?>

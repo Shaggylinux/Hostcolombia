@@ -73,6 +73,12 @@ body {
   margin: 0 auto 15px auto;
 }
 
+.icon-circle img {
+    width: 64px;
+    height: 64px;
+    object-fit: cover; /* opcional para que no se deforme */
+}
+
 .icon-circle i {
   font-size: 30px;
   color: #3b82f6;
