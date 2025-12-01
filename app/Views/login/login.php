@@ -1,32 +1,42 @@
-<<<<<<< HEAD
-<!doctype html>
-<html lang="es">
-=======
 <?= $this->extend("plantilla/layout") ?>
 
-<!-- 👇 Sección para CSS -->
 <?= $this->section("css") ?>
 <link rel="stylesheet" href="<?= base_url('css/login.css') ?>">
 <?= $this->endSection() ?>
->>>>>>> fd10640749215cd07024ff6b77b1b6350e300702
 
-<!-- 👇 Contenido principal -->
 <?= $this->section("contenido") ?>
+
+<div class="background-logo">右</div>
 
 <div class="login-wrapper">
     <div class="login-card">
+
         <div class="icon-circle">
-            <i class="bi bi-briefcase-fill"></i>
+            <div class="server-icon">
+                <div class="server-body">
+                    <div class="server-lights">
+                        <span class="light light-1"></span>
+                        <span class="light light-2"></span>
+                        <span class="light light-3"></span>
+                    </div>
+                    <div class="server-lines">
+                        <span class="line"></span>
+                        <span class="line"></span>
+                        <span class="line"></span>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <h2 class="title">Iniciar sesión</h2>
-        <p class="subtitle">Inicia sesión para continuar</p>
+        <h2 class="login-title">Iniciar sesión</h2>
+        <p class="login-subtitle">Inicia sesión para continuar</p>
 
         <?php if (session('mensaje')): ?>
             <div class="alert alert-danger"><?= session('mensaje'); ?></div>
         <?php endif; ?>
 
         <form action="<?= base_url('/login/verificar') ?>" method="post" class="login-form">
+
             <div class="mb-3 text-start">
                 <label for="usuario" class="form-label">Nombre de usuario</label>
                 <div class="input-group">
@@ -44,7 +54,7 @@
                 </div>
             </div>
 
-            <button type="submit" class="btn-login">Acceder</button>
+            <button type="submit" class="btn-submit">Acceder</button>
         </form>
 
         <footer class="footer-text mt-4">
@@ -55,11 +65,7 @@
 
 <?= $this->endSection() ?>
 
-<<<<<<< HEAD
-</html>
-=======
-<!-- 👇 Sección para JS -->
 <?= $this->section("js") ?>
 <script src="<?= base_url('js/login.js') ?>"></script>
+
 <?= $this->endSection() ?>
->>>>>>> fd10640749215cd07024ff6b77b1b6350e300702

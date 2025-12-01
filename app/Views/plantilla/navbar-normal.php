@@ -4,17 +4,15 @@
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+    
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="#">Descargas</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="<?php echo base_url("/general/precios")?>"> Planes </a>
-        </li>
+
+        <!-- Solo dejamos este -->
         <li class="nav-item">
           <a class="nav-link active" href="<?php echo base_url("/login/login")?>"> Iniciar Sesion </a>
         </li>
+
       </ul>
     </div>
   </div>
