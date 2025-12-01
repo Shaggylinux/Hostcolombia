@@ -16,7 +16,7 @@
             if (session() -> has("usuarios")){
                 return view("/vista/usuario-server");
             }
-            return view("/vista/error");
+            return view("/vista/error-vistas");
         }
 
         public function guardar(){
@@ -76,7 +76,7 @@
             $idSesion = session("id");
         
             if (!$idSesion) {
-                return view("/vista/error");
+                return view("/vista/error-enlace");
             }
         
             $ServerModel = new UsuarioServerModel();

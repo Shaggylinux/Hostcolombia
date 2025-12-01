@@ -57,7 +57,6 @@
                         "servidores"   => $servidores,
                         "usuario"      => $u
                     ];
-                session() -> destroy();
                 return view('/vista/usuario', $data);
             }
             return view("/vista/error-vistas");
@@ -74,7 +73,7 @@
                 return view("vista/error-enlace");
             }
         
-            $UsuarioModel = new UsuarioModel() -> find($idSesion);
+            $UsuarioModel      = new UsuarioModel() -> find($idSesion);
             $data = ["usuario" => $UsuarioModel];
             
             return view("vista/editar-usuario", $data);
