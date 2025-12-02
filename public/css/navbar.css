@@ -30,7 +30,7 @@ body{
 }
 
 .sidebar:hover{
-    width: 250px;
+    width: 270px;
     transition:0.5s;
 }
 
@@ -41,7 +41,7 @@ body{
 }
 
 .menu{
-height: 88%;
+height: 90%;
 position:relative;
 list-style:none;
 padding:0;

@@ -25,7 +25,7 @@
                 <input type="text" class="form-control" placeholder="Dominio.com" name="dominioserver" required>
             </div>
             <div>
-                <button class="btn btn-success form-control shadow"> <i class="fa-solid fa-plus"></i> AGREGAR</button>
+                <button class="btn btn-success form-control shadow"> <i class="fa-solid fa-plus"></i> AGREGAR </button>
             </div>
         </form>
     </div>

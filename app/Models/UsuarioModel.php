@@ -13,9 +13,9 @@ class UsuarioModel extends Model {
     public $timestamps = false;
 
     public function VerificarUsuario($usuario, $password) { 
-        return $this->where('nombreusuario', $usuario)
-                    ->where('clave', $password)
-                    ->first();
+        return $this -> where('nombreusuario', $usuario)
+                     -> where('clave', $password)
+                     -> first();
         }
     }
 ?>

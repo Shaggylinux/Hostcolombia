@@ -1,96 +1,89 @@
 <?php
+    namespace App\Controllers;
 
-namespace App\Controllers;
+    use App\Models\UsuarioModel;
+    use App\Models\UsuarioServerModel;
+    use Config\Database;
 
-use Config\Database;
-use App\Models\UsuarioServerModel;
-
-class Usuario extends BaseController
-{
-    public function usuariovista()
-    {
-        if (session()->has("usuarios")) {
-
-            $usuario = session()->get("usuarios");
-            $idusuario = $usuario["id"];
-
-            $UsuarioServer = new UsuarioServerModel();
-
-            $servidores = $UsuarioServer
-                ->where("id_usuario", $idusuario)
-                ->findAll();
-
-            $db = Database::connect();
-            $query = $db->query("SELECT nombre FROM servidor");
-            $resultado = $query->getResult();
-
-            $data = [
-                "nombreserver" => $resultado,
-                "Userid"       => $idusuario,
-                "servidores"   => $servidores
-            ];
-
-            return view('/vista/usuario', $data);
+    class Usuario extends BaseController{
+        private function checkServerStatus($url, $port = 443, $timeout = 2) {
+            $fp = @fsockopen($url, $port, $errno, $errstr, $timeout);
+            if ($fp) {
+                fclose($fp);
+                return true;
+            } else
+                return false;
         }
-        return view("/vista/error");
-    }
 
+        public function usuariovista(){
+            if (session("id") != 1) {
+                    $usuario   = session() -> get("usuarios");
+                    $idusuario = $usuario["id"];
 
-    public function administradorvista()
-    {
-        if (session("perfil") == 1) {
-            $db = Database::connect();
-            $query = $db->query("SELECT * FROM servidor order by id_usuario asc");
-            $resultado = $query->getResult();
-            $data = ["todo" => $resultado];
-            return view('/vista/administrador', $data);
+                    $UsuarioServer = new UsuarioServerModel();
+                    $servidores    = $UsuarioServer
+                        -> where("id_usuario", $idusuario)
+                        -> findAll();
+
+                    $coloresClaros = [
+                        "light-red",
+                        "light-blue",
+                        "light-green",
+                        "light-yellow",
+                        "light-purple"
+                    ];
+
+                    $coloresOscuros = [
+                        "dark-red",
+                        "dark-blue",
+                        "dark-green",
+                        "dark-purple"
+                    ];
+
+                    foreach ($servidores as &$s) {
+                        $s["color"]   = $coloresClaros[array_rand($coloresClaros)];
+                        $s["oscuros"] = $coloresOscuros[array_rand($coloresOscuros)];
+                        $s["online"]  = $this -> checkServerStatus($s["dominio"]);
+                    }
+
+                    $db    = Database::connect();
+                    $query = $db -> query("SELECT nombre, dominio FROM servidor") -> getResult();
+                    
+                    $u = new UsuarioModel() -> find(session("id"));
+
+                    $data = [
+                        "nombreserver" => $query,
+                        "Userid"       => $idusuario,
+                        "servidores"   => $servidores,
+                        "usuario"      => $u
+                    ];
+                return view('/vista/usuario', $data);
+            }
+            return view("/vista/error-vistas");
         }
-        return view("/vista/error");
+
+        public function editar_usuario($idUrl) {
+            $idSesion = session() -> get("id");
+        
+            if (!$idSesion) {
+                return view("vista/error-enlace");
+            }
+        
+            if ($idSesion != $idUrl) {
+                return view("vista/error-enlace");
+            }
+        
+            $UsuarioModel = new UsuarioModel() -> find($idSesion);
+            return view("vista/editar-usuario", ["usuario" => $UsuarioModel]);
+        }
+
+        public function actualizar_usuario($id){
+            if (session("id") != 1){
+                new UsuarioModel() -> update($id, $this -> request -> getPost());
+                session()          -> destroy();
+                return view("/vista/usuario-update");
+            }
+            return view("/vista/error-vistas");
+        }
     }
-
-    public function eliminar($id)
-    {
-        $model = new UsuarioServerModel();
-        $model->delete($id);
-        return redirect()->to("/vista/administrador");
-    }
-
-    public function editar($id)
-    {
-        $model = new UsuarioServerModel();
-        $data = ["server" => $model->find($id)];
-        return view("/vista/editar-server", $data);
-    }
-
-    public function actualizar($id)
-    {
-        $model = new UsuarioServerModel();
-        $model->update($id, $this->request->getPost());
-        return redirect()->to("/vista/usuario");
-    }
-
-    private function checkServerStatus($url, $port = 443, $timeout = 5)
-    {
-        $fp = @fsockopen($url, $port, $errno, $errstr, $timeout);
-        if ($fp) {
-            fclose($fp);
-            return true;
-        } else
-            return false;
-    }
-
-    public function panelcontrol($id)
-    {
-        $db = Database::connect();
-
-        $query = $db->query("SELECT * FROM servidor WHERE id = ?", [$id]);
-        $servidor = $query->getRow();
-
-        $online = $this->checkServerStatus($servidor->dominio);
-
-        return view("vista/panel-control", [
-            "servidor" => $servidor,
-            "online" => $online
-        ]);
-    }
-}
+?>

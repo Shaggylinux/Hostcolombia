@@ -3,6 +3,7 @@
    ============================================= */
    
 
+
 :root {
   --color-bg-dark: #0f172a;
   --color-bg-card: #1e293b;
@@ -25,10 +26,51 @@
 }
 
 
+/* body {
+   height: 100vh;
+  justify-content: center;
+  align-items: center; 
+  font-family: 'Segoe UI', sans-serif;
+   background: linear-gradient(135deg, #1e3a8a, #111827);
+} */
+ 
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.login-page {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #1e3a8a, #111827);
+
+}
+
+
+
 
 * {
   box-sizing: border-box;
 }
+
+.login-wrapper{
+    margin-top: 0px;
+   
+}
+
+
+/* body {
+  background-color: #f3f4f6;
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+} */
 
 body {
   background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
@@ -84,6 +126,56 @@ body {
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
   border: 1px solid var(--color-border);
   position: relative;
+
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* ====== ICONO SUPERIOR ====== */
+.icon-circle {
+  background-color: #1f2937;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 15px auto;
+}
+
+.icon-circle img {
+    width: 64px;
+    height: 64px;
+    object-fit: cover; /* opcional para que no se deforme */
+}
+
+.icon-circle i {
+  font-size: 30px;
+  color: #3b82f6;
+}
+
+/* ====== TITULO Y SUBTITULO ====== */
+.title {
+  font-size: 1.6em;
+  margin-bottom: 5px;
+}
+
+.subtitle {
+  color: #9ca3af;
+  font-size: 0.9em;
+  margin-bottom: 25px;
+}
+
+/* ====== FORMULARIO ====== */
+.form-label {
+  color: #d1d5db;
+  font-size: 0.9em;
+  margin-bottom: 6px;
+}
+
+.input-group {
+  background-color: #1f2937;
+  border-radius: 8px;
+
   overflow: hidden;
 }
 
