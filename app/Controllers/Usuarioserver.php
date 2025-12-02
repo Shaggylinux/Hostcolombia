@@ -58,7 +58,7 @@
             }
         
             $online = $this -> checkServerStatus($servidor["dominio"]);
-            $data = [
+            $data   = [
                 "servidor" => $servidor,
                 "online"   => $online];
             return view("/vista/panel-control", $data);
@@ -90,9 +90,7 @@
                 return view("/vista/error-enlace");
             }
 
-            $data = ["server" => $server];
-        
-            return view("/vista/editar-server", $data);
+            return view("/vista/editar-server", ["server" => $server]);
         }
     }
 ?>

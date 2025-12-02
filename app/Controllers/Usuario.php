@@ -73,10 +73,8 @@
                 return view("vista/error-enlace");
             }
         
-            $UsuarioModel      = new UsuarioModel() -> find($idSesion);
-            $data = ["usuario" => $UsuarioModel];
-            
-            return view("vista/editar-usuario", $data);
+            $UsuarioModel = new UsuarioModel() -> find($idSesion);
+            return view("vista/editar-usuario", ["usuario" => $UsuarioModel]);
         }
 
         public function actualizar_usuario($id){

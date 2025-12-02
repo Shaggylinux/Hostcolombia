@@ -10,8 +10,7 @@
         public function index(){
             if (session("id") == 1){
                 $model = new UsuarioModel() -> findAll();
-                $data  = ["usuarios" => $model];
-                return view("/vista/administrador-usuarios", $data);
+                return view("/vista/administrador-usuarios", ["usuarios" => $model]);
             }
         return view("/vista/error-vistas");
         }
@@ -21,8 +20,7 @@
                 $db        = Database::connect();
                 $query     = $db     -> query("SELECT * FROM servidor order by id_usuario asc");
                 $resultado = $query  -> getResult();
-                $data      = ["todo" => $resultado];
-                return view("/vista/administrador", $data);
+                return view("/vista/administrador", ["todo" => $resultado]);
             }
             return view("/vista/error-vistas");
         }
@@ -55,7 +53,7 @@
                 return "<h1>Debes seleccionar almenos una casilla</h1>";
             }
 
-            $model   = new UsuarioModel();
+            $model    = new UsuarioModel();
             $usuarios = $model -> select($columnas) -> findAll();
 
             $spreadsheet = new Spreadsheet();
@@ -99,11 +97,11 @@
                 return "Error: Debes seleccionar al menos una columna.";
             }
         
-            $model = new UsuarioServerModel();
+            $model    = new UsuarioServerModel();
             $servidor = $model -> findAll();
         
             $spreadsheet = new Spreadsheet();
-            $sheet = $spreadsheet -> getActiveSheet();
+            $sheet       = $spreadsheet -> getActiveSheet();
         
             $col = "A";
             foreach ($columnas as $c) {
