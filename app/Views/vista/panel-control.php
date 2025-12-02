@@ -14,10 +14,10 @@
     <div>
         <?php if ($online): ?>
             <span class="text-success fw-bold">ONLINE</span>
-            <a href="https://<?php echo $servidor["dominio"] ?>"> IR : <?php echo $servidor["dominio"] ?>  </a>
-            <?php else: ?>
+                <a href="https://<?php echo $servidor["dominio"] ?>"> IR : <?php echo $servidor["dominio"] ?>  </a>
+                <?php else: ?>
             <span class="text-danger fw-bold">OFFLINE</span>
-            <?php endif;?>
+        <?php endif;?>
     </div>
     </body>
 </html>
