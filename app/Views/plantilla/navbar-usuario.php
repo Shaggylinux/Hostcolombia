@@ -25,12 +25,6 @@
           <span> Perfil </span>
         </a>
       </li>
-      <li>
-        <a href="#">
-          <i class="fas fa-chart-bar"></i>
-          <span> Estadisticas </span>
-        </a>
-      </li>
       <li class="logout">
         <a href="<?php echo base_url("/logout") ?>">
           <i class="fas fa-sign-out-alt"></i>

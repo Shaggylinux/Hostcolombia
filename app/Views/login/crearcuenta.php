@@ -16,25 +16,25 @@
                 <tr>
                     <div class="input-group mb-3 shadow">
                         <span class="input-group-text"> <i class="fa-solid fa-user"></i> </span>
-                        <input type="text" class="form-control" placeholder="Nombre" name="nombre" class="form-control">
+                        <input type="text" class="form-control" placeholder="Nombre" name="nombre" class="form-control" required>
                     </div>
                 </tr>
                 <tr>
                     <div class="input-group mb-3 shadow">
                         <span class="input-group-text"> <i class="fa-solid fa-display"></i> </span>
-                        <input type="text" placeholder="Nombre en pantalla" name="nombreusuario" class="form-control">
+                        <input type="text" placeholder="Nombre en pantalla" name="nombreusuario" class="form-control" required>
                     </div>
                 </tr>
                 <tr>
                     <div class="input-group mb-3 shadow">
                         <span class="input-group-text"> <i class="fa-solid fa-lock"></i> </span>
-                        <input type="password" placeholder="Contraseña" name="clave" class="form-control">
+                        <input type="password" placeholder="Contraseña" name="clave" class="form-control"required >
                     </div>
                 </tr>
                 <tr>
                     <div class="input-group mb-3 shadow">
                         <span class="input-group-text"> <i class="fa-solid fa-envelope"></i> </span>
-                        <input type="email" placeholder="Correo" name="correo" class="form-control">
+                        <input type="email" placeholder="Correo" name="correo" class="form-control" required>
                     </div>
                 </tr>
                 <tr>

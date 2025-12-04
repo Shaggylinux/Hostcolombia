@@ -15,7 +15,7 @@
             $busqueda = $this -> request -> getGet("busqueda");
         
             $db = Database::connect();
-            $builder = $db->table("usuarios");
+            $builder = $db -> table("usuarios");
         
             if (!empty($busqueda)) {
                 $builder-> groupStart()
@@ -26,7 +26,7 @@
                         -> groupEnd();
             }
         
-            $builder->orderBy("id", "asc");
+            $builder -> orderBy("id", "asc");
             $resultado = $builder -> get() -> getResultArray();
         
             return view("/vista/administrador-usuarios", [
@@ -54,13 +54,14 @@
                          -> groupEnd();
             }
         
-            $builder->orderBy("id_usuario", "asc");
+            $builder -> orderBy("id_usuario", "asc");
             $resultado = $builder->get()->getResult();
+
+            $data = [
+                "todo"     => $resultado,
+                "busqueda" => $busqueda];
         
-            return view("/vista/administrador", [
-                "todo"      => $resultado,
-                "busqueda"  => $busqueda
-            ]);
+            return view("/vista/administrador", $data);
         }
 
         public function eliminar_servidor($id){
@@ -124,16 +125,15 @@
                 $fila++;
             }
         
-            $writer = new Xlsx($spreadsheet);
-            $filename = "Usuarios_" . date("Ymd_His") . ".xlsx";
+            $writer   = new Xlsx($spreadsheet);
+            $filename = "Usuarios_".date("Ymd_His").".xlsx";
         
             header("Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
             header("Content-Disposition: attachment;filename=\"$filename\"");
             header("Cache-Control: max-age=0");
-            $writer->save("php://output");
+            $writer -> save("php://output");
             exit;
         }
-
 
         public function exportar_servidor(){
             if (session("id") != 1) {
