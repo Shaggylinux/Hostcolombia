@@ -1,116 +1,106 @@
-/* ===== NAVBAR GENERAL ===== */
-
 .navbar-custom {
-    width: 100%;
-    background: #0b2342; /* azul oscuro */
-    padding: 12px 20px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 9999;
-    box-shadow: 0 0 15px #18f0ff70; /* brillo suave */
+  position: fixed;
+  top: 12px;
+  right: 12px;
+  z-index: 11000;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
 }
 
 .navbar-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(11,35,66,0.95);
+  padding: 8px;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(24,240,255,0.08), 0 2px 6px rgba(0,0,0,0.35);
+  backdrop-filter: blur(6px);
 }
 
 .navbar-logo {
-    font-size: 1.2rem;
-    color: #18f0ff;
-    font-weight: bold;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: 8px;
+  color: #18f0ff;
+  text-decoration: none;
+  font-weight: 600;
+  display: none;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.95rem;
 }
-
-
-/* ===== ICONO HAMBURGUESA ===== */
 
 .navbar-toggle {
-    background: none;
-    border: none;
-    color: #18f0ff;
-    font-size: 1.6rem;
-    cursor: pointer;
+  background: transparent;
+  border: none;
+  color: #cbeffd;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 6px;
+  border-radius: 8px;
 }
 
-
-/* ===== MENÚ ===== */
-
 .navbar-menu {
-    position: fixed;
-    top: 0;
-    right: -260px;
-    width: 260px;
-    height: 100%;
-    background: #05172d;
-    box-shadow: -1px 0 20px #18f0ff60;
-    padding: 25px 15px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    transition: 0.3s ease;
+  display: none;
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  min-width: 210px;
+  background: #061425;
+  border-radius: 10px;
+  padding: 8px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+  list-style: none;
+  transition: transform 0.18s ease, opacity 0.18s ease;
+  transform-origin: top right;
+  opacity: 0;
+  transform: translateY(-6px) scale(0.98);
+  pointer-events: none;
 }
 
 .navbar-menu.open {
-    right: 0;
+  display: block;
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
 }
 
-.navbar-top li,
-.navbar-bottom li {
-    list-style: none;
+.navbar-menu li {
+  margin: 4px 0;
 }
 
-.navbar-link,
+.navbar-menu li a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #dff8ff;
+  text-decoration: none;
+  padding: 8px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+}
+
+.navbar-menu li a:hover {
+  background: rgba(24,240,255,0.06);
+  color: #b6f8ff;
+}
+
+.navbar-menu .divider {
+  height: 1px;
+  margin: 8px 0;
+  background: rgba(255,255,255,0.03);
+  border-radius: 2px;
+}
+
 .navbar-logout {
-    display: block;
-    padding: 12px;
-    color: #bfe9ff;
-    text-decoration: none;
-    font-size: 1rem;
-    border-radius: 8px;
-    transition: 0.2s;
+  color: #ffd7d7;
 }
 
-.navbar-link:hover,
 .navbar-logout:hover {
-    background: #0f375d;
-    color: #18f0ff;
+  color: #ffb3b3;
+  background: rgba(255,80,80,0.06);
 }
 
-.navbar-link.active {
-    background: #0f375d;
-    color: #18f0ff;
-    font-weight: bold;
-}
+* { box-sizing: border-box; }
 
-
-/* CERRAR SESIÓN SIEMPRE ABAJO */
-.navbar-bottom {
-    margin-top: auto;
-}
-
-
-/* ===== OVERLAY ===== */
-
-.navbar-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    backdrop-filter: blur(3px);
-    background: #00000080;
-    opacity: 0;
-    visibility: hidden;
-    transition: 0.3s ease;
-}
-
-.navbar-overlay.show {
-    opacity: 1;
-    visibility: visible;
+@media (max-width: 480px) {
+  .navbar-container { padding: 6px; }
+  .navbar-menu { min-width: 170px; right: 6px; }
 }
