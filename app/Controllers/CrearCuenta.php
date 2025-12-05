@@ -26,7 +26,7 @@
             $ModelRol = new RolModel();
             $ModelRol -> insert(["id" => $ModelUsuario -> getInsertID()]);
         
-            return redirect() -> to("/login/crearcuenta");
+            return redirect() -> to("/login/login");
         }
     }
 ?>

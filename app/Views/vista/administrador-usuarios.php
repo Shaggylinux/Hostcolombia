@@ -6,48 +6,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="<?= base_url('assets/css/Administrador-usuarios.css') ?>">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css">
     <title>Panel de Usuarios</title>
 </head>
 <body>
-    <h1 class="text-center">Usuarios</h1>
+    <h1 class="page-title">Usuarios</h1>
+    <div class="search-container">
+        <form method="get" action="">
+            <div class="search-group">
+                <input type="text" 
+                       name="busqueda" 
+                       class="search-input"
+                       placeholder="Buscar por ID, nombre, usuario o correo..."
+                       value="<?= esc($busqueda ?? '') ?>">
 
-    <form method="get" action="">
-        <div class="input-group mb-3 mt-3">
-            <input type="text" name="busqueda" class="form-control"
-                   placeholder="Buscar por ID, nombre, usuario o correo..."
-                   value="<?= esc($busqueda ?? '') ?>">
+                <button class="search-button" type="submit">
+                    <i class="fa fa-search"></i> Buscar
+                </button>
+            </div>
+        </form>
+    </div>
 
-            <button class="btn btn-primary">
-                <i class="fa fa-search"></i> Buscar
-            </button>
-        </div>
-    </form>
-
-    <div class="mt-3">
+    <div class="export-section">
         <form action="<?= base_url('/administrador/exportar_usuarios?busqueda=' . ($busqueda ?? '')) ?>" method="post">
-            <div class="card p-3 shadow-sm">
-
+            <div class="export-card">
                 <h5>Selecciona las columnas a exportar:</h5>
 
-                <label><input type="checkbox" name="columnas[]" value="id" checked> ID</label><br>
-                <label><input type="checkbox" name="columnas[]" value="nombre" checked> Nombre</label><br>
-                <label><input type="checkbox" name="columnas[]" value="nombreusuario" checked> Nombre de usuario</label><br>
-                <label><input type="checkbox" name="columnas[]" value="correo" checked> Correo</label><br>
+                <div class="checkbox-grid">
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="columnas[]" value="id" checked>
+                        <span>ID</span>
+                    </label>
+                    
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="columnas[]" value="nombre" checked>
+                        <span>Nombre</span>
+                    </label>
+                    
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="columnas[]" value="nombreusuario" checked>
+                        <span>Nombre de usuario</span>
+                    </label>
+                    
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="columnas[]" value="correo" checked>
+                        <span>Correo</span>
+                    </label>
+                </div>
 
-                <button class="btn btn-success mt-3">
+                <button class="export-button" type="submit">
                     Descargar Excel
                 </button>
             </div>
         </form>
     </div>
 
-    <div class="container mt-4 shadow border p-4 rounded-5 border-5 mx-auto">
-        <table class="table table-striped table-hover table-bordered align-middle text-center">
-            <thead class="table-primary">
+    <div class="table-container">
+        <table class="data-table">
+            <thead>
                 <tr>
-                    <td>ID</td>
                     <td>Nombre</td>
                     <td>Nombre de usuario</td>
                     <td>Correo</td>
@@ -58,16 +76,16 @@
             <tbody>
                 <?php foreach ($usuarios as $usuario): ?>
                 <tr>
-                    <td><?= $usuario["id"] ?></td>
                     <td><?= $usuario["nombre"] ?></td>
                     <td><?= $usuario["nombreusuario"] ?></td>
                     <td><?= $usuario["correo"] ?></td>
                     <td>
                         <?php if ($usuario["id"] == 1): ?>
-                            <a class="btn btn-warning btn-sm shadow-sm">ADMINISTRADOR</a>
+                            <span class="btn-admin">ADMINISTRADOR</span>
                         <?php else: ?>
-                            <a href="<?= base_url("usuario/eliminar/".$usuario["id"]) ?>" class="btn btn-danger btn-sm shadow-sm">
-                                <i class="fa-solid fa-trash"></i>
+                            <a href="<?= base_url("usuario/eliminar/".$usuario["id"]) ?>" 
+                               class="btn-delete">
+                                <i class="fa-solid fa-trash"></i> Eliminar
                             </a>
                         <?php endif ?>
                     </td>

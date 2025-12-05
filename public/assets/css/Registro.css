@@ -1,0 +1,235 @@
+/* Estilos para la página de registro - HostColombia */
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #1e3a5f 0%, #2d4a7c 100%);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.register-container {
+  width: 100%;
+  max-width: 400px;
+  margin: 2rem;
+}
+
+.register-card {
+  background: #1a1f2e;
+  border: 2px solid #22d3ee;
+  border-radius: 16px;
+  padding: 2.5rem;
+  box-shadow: 0 0 40px rgba(34, 211, 238, 0.3), 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.logo-circles {
+  width: 140px;
+  height: 140px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-circle {
+  position: absolute;
+  border-radius: 50%;
+  border: 2px solid;
+}
+
+.logo-circle-outer {
+  width: 140px;
+  height: 140px;
+  border-color: rgba(34, 211, 238, 0.3);
+}
+
+.logo-circle-middle {
+  width: 110px;
+  height: 110px;
+  border-color: rgba(34, 211, 238, 0.5);
+}
+
+.logo-circle-inner {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #22d3ee 0%, #06b6d4 100%);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 30px rgba(34, 211, 238, 0.6);
+}
+
+.logo-icon {
+  width: 36px;
+  height: 36px;
+  background: #1a1f2e;
+  border-radius: 6px;
+  position: relative;
+}
+
+.logo-icon::before,
+.logo-icon::after {
+  content: "";
+  position: absolute;
+  background: #fbbf24;
+  border-radius: 50%;
+}
+
+.logo-icon::before {
+  width: 8px;
+  height: 8px;
+  top: 50%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+}
+
+.logo-icon::after {
+  width: 8px;
+  height: 8px;
+  top: 50%;
+  right: 20%;
+  transform: translate(-50%, -50%);
+  background: #f97316;
+}
+
+.register-title {
+  color: #22d3ee;
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  margin: 0 0 0.5rem 0;
+}
+
+.register-subtitle {
+  color: #06b6d4;
+  font-size: 0.95rem;
+  text-align: center;
+  margin: 0 0 2rem 0;
+  opacity: 0.9;
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-label {
+  display: block;
+  color: #22d3ee;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  background: #ffffff;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: #1a1f2e;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.form-input::placeholder {
+  color: #94a3b8;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #22d3ee;
+  box-shadow: 0 0 0 3px rgba(34, 211, 238, 0.1);
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 0.875rem;
+  background: linear-gradient(135deg, #22d3ee 0%, #06b6d4 100%);
+  border: none;
+  border-radius: 8px;
+  color: #1a1f2e;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 0.5rem;
+  box-shadow: 0 4px 12px rgba(34, 211, 238, 0.3);
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(34, 211, 238, 0.5);
+}
+
+.submit-btn:active {
+  transform: translateY(0);
+}
+
+.form-footer {
+  text-align: center;
+  margin-top: 1.5rem;
+  color: #94a3b8;
+  font-size: 0.9rem;
+}
+
+.form-footer a {
+  color: #22d3ee;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.form-footer a:hover {
+  color: #06b6d4;
+  text-decoration: underline;
+}
+
+.copyright {
+  text-align: center;
+  color: #06b6d4;
+  font-size: 0.8rem;
+  margin-top: 1.5rem;
+  opacity: 0.8;
+}
+
+/* Estilos responsivos */
+@media (max-width: 480px) {
+  .register-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .register-title {
+    font-size: 1.75rem;
+  }
+
+  .logo-circles {
+    width: 120px;
+    height: 120px;
+  }
+
+  .logo-circle-outer {
+    width: 120px;
+    height: 120px;
+  }
+
+  .logo-circle-middle {
+    width: 95px;
+    height: 95px;
+  }
+
+  .logo-circle-inner {
+    width: 70px;
+    height: 70px;
+  }
+}

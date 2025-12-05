@@ -1,0 +1,116 @@
+/* ===== NAVBAR GENERAL ===== */
+
+.navbar-custom {
+    width: 100%;
+    background: #0b2342; /* azul oscuro */
+    padding: 12px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    box-shadow: 0 0 15px #18f0ff70; /* brillo suave */
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-logo {
+    font-size: 1.2rem;
+    color: #18f0ff;
+    font-weight: bold;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+
+/* ===== ICONO HAMBURGUESA ===== */
+
+.navbar-toggle {
+    background: none;
+    border: none;
+    color: #18f0ff;
+    font-size: 1.6rem;
+    cursor: pointer;
+}
+
+
+/* ===== MENÚ ===== */
+
+.navbar-menu {
+    position: fixed;
+    top: 0;
+    right: -260px;
+    width: 260px;
+    height: 100%;
+    background: #05172d;
+    box-shadow: -1px 0 20px #18f0ff60;
+    padding: 25px 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: 0.3s ease;
+}
+
+.navbar-menu.open {
+    right: 0;
+}
+
+.navbar-top li,
+.navbar-bottom li {
+    list-style: none;
+}
+
+.navbar-link,
+.navbar-logout {
+    display: block;
+    padding: 12px;
+    color: #bfe9ff;
+    text-decoration: none;
+    font-size: 1rem;
+    border-radius: 8px;
+    transition: 0.2s;
+}
+
+.navbar-link:hover,
+.navbar-logout:hover {
+    background: #0f375d;
+    color: #18f0ff;
+}
+
+.navbar-link.active {
+    background: #0f375d;
+    color: #18f0ff;
+    font-weight: bold;
+}
+
+
+/* CERRAR SESIÓN SIEMPRE ABAJO */
+.navbar-bottom {
+    margin-top: auto;
+}
+
+
+/* ===== OVERLAY ===== */
+
+.navbar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(3px);
+    background: #00000080;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s ease;
+}
+
+.navbar-overlay.show {
+    opacity: 1;
+    visibility: visible;
+}

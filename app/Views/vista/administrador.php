@@ -6,74 +6,89 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+        <link rel="stylesheet" href="<?= base_url('assets/css/Administrador.css') ?>">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css">
-        <title>Panel de servidores</title>
+        <title> Panel de Servidores </title>
     </head>
     <body>
-        <h1 class="text-center">Servidores</h1>
-
-<form method="get" action="">
-    <div class="input-group mb-3">
-        <input type="text" name="busqueda" class="form-control" placeholder="Buscar por ID o Nombre..."
-               value="<?= esc($_GET['busqueda'] ?? '') ?>">
-        <button class="btn btn-primary" type="submit">
-            <i class="fa fa-search"></i> Filtrar
-        </button>
-    </div>
-</form>
-<form action="<?= base_url('/administrador/exportar_servidor?busqueda=' . ($busqueda ?? '')) ?>" method="post">
-    <h4>Selecciona las columnas a exportar:</h4>
-    <div class="form-check">
-        <input class="form-check-input" type="checkbox" name="columnas[]" value="id" checked>
-        <label class="form-check-label">ID</label>
-    </div>
-    <div class="form-check">
-        <input class="form-check-input" type="checkbox" name="columnas[]" value="nombre" checked>
-        <label class="form-check-label">Nombre</label>
-    </div>
-    <div class="form-check">
-        <input class="form-check-input" type="checkbox" name="columnas[]" value="descripcion" checked>
-        <label class="form-check-label">Descripción</label>
-    </div>
-    <div class="form-check">
-        <input class="form-check-input" type="checkbox" name="columnas[]" value="dominio" checked>
-        <label class="form-check-label">Dominio</label>
-    </div>
-    <div class="form-check">
-        <input class="form-check-input" type="checkbox" name="columnas[]" value="id_usuario" checked>
-        <label class="form-check-label">ID Usuario</label>
-    </div>
-
-    <button class="btn btn-success mt-3" type="submit">Exportar servidores a</button>
-</form>
-        <div class="container  mt-4 shadow border p-4 rounded-5 border-5 mx-auto m-4">
-            <table class="table table-striped table-hover table-bordered align-middle rounded text-center">
-                <thead class="table-primary">
-                    <tr>
-                        <td> ID USUARIO  </td>
-                        <td> Nombre      </td>
-                        <td> Descripcion </td>
-                        <td> Dominio     </td>
-                        <td> Accion      </td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php foreach($todo as $t):?>
-                    <tr>
-                        <td> <?php echo $t -> id_usuario  ?> </td>
-                        <td> <?php echo $t -> nombre      ?> </td>
-                        <td> <?php echo $t -> descripcion ?> </td>
-                        <td> <?php echo $t -> dominio     ?> </td>
-                        <td>
-                            <a href="<?php echo base_url('login/eliminar/'.$t->id)?>" class="btn btn-danger btn-sm shadow-sm"> <i class="fa-solid fa-trash"></i> </a>
-                        </td>
-                    </tr>
-                    <?php endforeach?>
-                </tbody>
-            </table>
+        <div class="admin-container">
+            <div class="admin-header">
+                <h1>Panel de Servidores</h1>
+                <p>Administra y gestiona todos tus servidores tunnel</p>
+            </div>
+            <div class="search-section">
+                <form method="get" action="" class="search-form">
+                    <input 
+                        type="text" 
+                        name="busqueda" 
+                        class="search-input" 
+                        placeholder="Buscar por ID, Nombre o Dominio..."
+                        value="<?= esc($_GET['busqueda'] ?? '') ?>">
+                    <button class="search-btn" type="submit">
+                        <i class="fa fa-search"></i> Filtrar
+                    </button>
+                </form>
+            </div>
+            <div class="export-section">
+                <form action="<?= base_url('/administrador/exportar_servidor?busqueda=' . ($busqueda ?? '')) ?>" method="post">
+                    <h4>Exportar Datos a Excel</h4>
+                    <div class="checkbox-grid">
+                        <div class="checkbox-item">
+                            <input class="form-check-input" type="checkbox" name="columnas[]" value="nombre" id="col-nombre" checked>
+                            <label for="col-nombre">Nombre</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input class="form-check-input" type="checkbox" name="columnas[]" value="descripcion" id="col-descripcion" checked>
+                            <label for="col-descripcion">Descripción</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input class="form-check-input" type="checkbox" name="columnas[]" value="dominio" id="col-dominio" checked>
+                            <label for="col-dominio">Dominio</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input class="form-check-input" type="checkbox" name="columnas[]" value="id_usuario" id="col-id-usuario" checked>
+                            <label for="col-id-usuario">ID Usuario</label>
+                        </div>
+                    </div>
+                    <button class="export-btn" type="submit"> Exportar a Excel </button>
+                </form>
+            </div>
+            <div class="table-section">
+                <div class="table-wrapper">
+                    <?php if(!empty($todo)): ?>
+                        <table class="servers-table">
+                            <thead>
+                                <tr>
+                                    <th> Nombre      </th>
+                                    <th> Descripción </th>
+                                    <th> Dominio     </th>
+                                    <th> Acción      </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php foreach($todo as $t): ?>
+                                <tr>
+                                    <td><?php echo $t -> nombre ?></td>
+                                    <td><?php echo $t -> descripcion ?></td>
+                                    <td><?php echo $t -> dominio ?></td>
+                                    <td>
+                                        <a href="<?php echo base_url('/servidor/eliminar/'.$t->id)?>" class="delete-btn">
+                                            <i class="fa-solid fa-trash"></i> Eliminar
+                                        </a>
+                                    </td>
+                                </tr>
+                                <?php endforeach ?>
+                            </tbody>
+                        </table>
+                    <?php else: ?>
+                        <div class="empty-state">
+                            <i class="fa-solid fa-server"></i>
+                            <p> No se encontraron servidores </p>
+                        </div>
+                    <?php endif; ?>
+                </div>
+            </div>
         </div>
     </body>
 </html>
-
 <?php echo $this -> endSection()?>
