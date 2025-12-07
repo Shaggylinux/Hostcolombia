@@ -1,28 +1,35 @@
-<?php echo $this -> extend("plantilla/layout-usuario")?>
-<?php echo $this -> section("contenido")?>
+<?php echo $this->extend("plantilla/layout-usuario") ?>
+<?php echo $this->section("contenido") ?>
 
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agregar servidor</title>
+    <title>Editar Perfil</title>
+    <link rel="stylesheet" href="<?php echo base_url('assets/css/editar.css'); ?>">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
-    <div class="container border mx-auto p-5 m-5 rounded-3 shadow" style="width: 500px;">
-        <form class="form" method="post">
-            <h1 class="text-center mb-4 p-3 shadow rounded-3">Agregar servidor</h1>
-            <div class="input-group mb-3 shadow">
+    <div class="edit-container">
+        <form method="post">
+            <h1 class="edit-title">Agregar servidor</h1>
+            <div class="input-group">
                 <span class="input-group-text"><i class="fa-solid fa-signature"></i></span>
-                <input type="text" class="form-control" placeholder="Nombre de la maquina" name="nombreserver" required>
+                <input type="text" class="form-control" placeholder="Nombre del tunnel"
+                    name="nombreserver" required>
             </div>
-            <div class="input-group mb-3 shadow">
+            <div class="input-group">
                 <span class="input-group-text"><i class="fa-solid fa-pencil"></i></span>
-                <input type="text" class="form-control" placeholder="Breve descripcion" name="descripcionserver" required>
+                <input type="text" class="form-control" placeholder="Descripcion"
+                    name="descripcionserver" required>
             </div>
-            <div class="input-group mb-3 shadow">
-                <label class="input-group-text"> https://</label>
-                <input type="text" class="form-control" placeholder="Dominio.com" name="dominioserver" required>
+            <div class="input-group">
+                <span class="input-group-text"><i class="fa-solid fa-envelope"></i></span>
+                <input type="text" class="form-control" placeholder="Dominio"
+                    name="dominioserver" required>
             </div>
             <div>
                 <button class="btn btn-success form-control shadow"> <i class="fa-solid fa-plus"></i> AGREGAR </button>
@@ -30,6 +37,7 @@
         </form>
     </div>
 </body>
+
 </html>
 
-<?php echo $this -> endSection()?>  
+<?php echo $this->endSection() ?>

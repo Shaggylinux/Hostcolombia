@@ -18,12 +18,12 @@
             $builder = $db -> table("usuarios");
         
             if (!empty($busqueda)) {
-                $builder-> groupStart()
-                        -> like("id", $busqueda)
-                        -> orLike("nombre", $busqueda)
-                        -> orLike("nombreusuario", $busqueda)
-                        -> orLike("correo", $busqueda)
-                        -> groupEnd();
+                $builder -> groupStart()
+                         -> like("id", $busqueda)
+                         -> orLike("nombre", $busqueda)
+                         -> orLike("nombreusuario", $busqueda)
+                         -> orLike("correo", $busqueda)
+                         -> groupEnd();
             }
         
             $builder -> orderBy("id", "asc");

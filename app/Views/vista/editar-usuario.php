@@ -7,29 +7,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Editar Perfil </title>
+    <title>Editar Perfil</title>
+    <link rel="stylesheet" href="<?php echo base_url('assets/css/editar.css'); ?>">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
-    <div class="container border mx-auto p-5 m-5 rounded-3 shadow" style="width: 500px;">
+    <div class="edit-container">
         <form class="form" method="post" action="<?php echo base_url("/usuario/actualizar/".$usuario["id"]);?>">
-            <h1 class="text-center mb-4 p-3 shadow rounded-3"> Editar Perfil </h1>
-            <div class="input-group mb-3 shadow">
+            <h1 class="edit-title">Editar Usuario</h1>
+            
+            <div class="input-group">
                 <span class="input-group-text"><i class="fa-solid fa-signature"></i></span>
                 <input type="text" class="form-control" placeholder="Nombre"
-                    name="nombre" value="<?php echo $usuario["nombre"] ?>">
+                    name="nombre" value="<?php echo $usuario["nombre"] ?>" required>
             </div>
-            <div class="input-group mb-3 shadow">
+            
+            <div class="input-group">
                 <span class="input-group-text"><i class="fa-solid fa-pencil"></i></span>
                 <input type="text" class="form-control" placeholder="Nombre de Usuario"
-                    name="nombreusuario" value="<?php echo $usuario["nombreusuario"] ?>">
+                    name="nombreusuario" value="<?php echo $usuario["nombreusuario"] ?>" required>
             </div>
-            <div class="input-group mb-3 shadow">
-                <input type="text" class="form-control" placeholder="Correo"
-                    name="correo" value="<?php echo $usuario["correo"] ?>">
+            
+            <div class="input-group">
+                <span class="input-group-text"><i class="fa-solid fa-envelope"></i></span>
+                <input type="email" class="form-control" placeholder="Correo"
+                    name="correo" value="<?php echo $usuario["correo"] ?>" required>
             </div>
+            
             <div>
-                <button type="submit" class="btn btn-success form-control shadow"> <i class="fa-solid fa-pencil"></i> Actualizar </button>
+                <button type="submit" class="btn-success">
+                    <i class="fa-solid fa-pencil"></i> Actualizar
+                </button>
             </div>
         </form>
     </div>
