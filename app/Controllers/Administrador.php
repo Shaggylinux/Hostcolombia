@@ -15,7 +15,7 @@
             $busqueda = $this -> request -> getGet("busqueda");
         
             $db = Database::connect();
-            $builder = $db -> table("usuarios");
+            $builder = $db-> table("usuarios");
         
             if (!empty($busqueda)) {
                 $builder -> groupStart()
