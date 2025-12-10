@@ -55,7 +55,7 @@
             }
         
             $builder -> orderBy("id_usuario", "asc");
-            $resultado = $builder->get()->getResult();
+            $resultado = $builder -> get() -> getResult();
 
             $data = [
                 "todo"     => $resultado,
