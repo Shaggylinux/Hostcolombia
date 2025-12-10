@@ -22,3 +22,18 @@ create table if not exists servidor(
 	id_usuario int,
 	foreign key (id_usuario) references usuarios(id)
 );
+
+ create table if not exists token(
+	id int primary key auto_increment,
+	token int
+);
+
+create table if not exists tarjeta(
+	id int primary key auto_increment,
+	numero int,
+	codigo int,
+	NombreCompleto text,
+	mes int,
+	ano int,
+	tipo_tarjeta text
+);
