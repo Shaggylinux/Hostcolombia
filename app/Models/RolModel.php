@@ -6,6 +6,6 @@
         protected $table         = "perfil";
         protected $primaryKey    = "id";
         protected $allowedFields = ["id"];
-        public $timestamps       = false;
+        public    $timestamps    = false;
     }
 ?>

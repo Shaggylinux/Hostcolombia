@@ -4,9 +4,8 @@
 
     class UsuarioServerModel extends Model{
         protected $table = "servidor";
-        protected $primaryKey = 'id';
-        protected $allowedFields = ["id",
-                                    "nombre",
+        protected $primaryKey = "id";
+        protected $allowedFields = ["nombre",
                                     "descripcion",
                                     "dominio",
                                     "id_usuario"];
