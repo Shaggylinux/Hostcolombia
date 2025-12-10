@@ -1,6 +1,5 @@
 <?= $this->extend("plantilla/layout") ?>
 
-
 <?= $this->section("css") ?>
 <link rel="stylesheet" href="<?= base_url('css/login.css') ?>">
 <?= $this->endSection() ?>
@@ -34,7 +33,7 @@
         <h2 class="login-title">Iniciar sesión</h2>
         <p class="login-subtitle">Inicia sesión para continuar</p>
         <?php if (session('mensaje')): ?>
-            <div class="alert alert-danger"><?= session('mensaje'); ?></div>
+            <div class="error-message"><?= session('mensaje'); ?></div>
         <?php endif; ?>
         <form action="<?= base_url('/login/verificar') ?>" method="post" class="login-form">
             <div class="mb-3 text-start">
