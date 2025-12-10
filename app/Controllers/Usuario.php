@@ -37,7 +37,7 @@
                     "servidores"   => $servidores,
                     "usuario"      => new UsuarioModel() -> find(session("id"))
                 ];
-            return view('/vista/usuario', $data);
+            return view("/vista/usuario", $data);
             }
         return view("/vista/error-vistas");
         }

@@ -1,7 +1,7 @@
 <?php echo $this -> extend("plantilla/layout-usuario") ?>
 <?php echo $this -> section("contenido") ?>
 
-<link rel="stylesheet" href="<?php echo base_url('assets/css/panel.css'); ?>">
+<link rel="stylesheet" href="<?php echo base_url("assets/css/panel.css"); ?>">
 
 <div class="panel-container">
     <div class="panel-box">
@@ -29,7 +29,7 @@
             </div>
         </div>
 <?php if ($online): ?>
-    <a href="https://<?php echo $servidor['dominio'] ?>" class="status-btn online-btn">Visitar</a>
+    <a href="https://<?php echo $servidor["dominio"] ?>" class="status-btn online-btn">Visitar</a>
 <?php else: ?>
     <a class="status-btn offline-btn">Offline</a>
 <?php endif; ?>
@@ -46,7 +46,7 @@
         </ul>
         <div class="button-row">
             <a href="<?php echo base_url("/server/eliminar/".$servidor["id"]) ?>" class="btn-danger-outline"> Eliminar Tunnel </a>
-            <a class="btn-secondary-outline" href="<?php echo base_url('general/token/'.$servidor['id']) ?>">Regenerar token</a>
+            <a class="btn-secondary-outline" href="<?php echo base_url("general/token/".$servidor["id"]) ?>">Regenerar token</a>
         </div>
     </div>
 </div>

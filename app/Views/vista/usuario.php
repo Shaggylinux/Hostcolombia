@@ -1,7 +1,7 @@
 <?php echo $this->extend("plantilla/layout-usuario") ?>
 <?php echo $this->section("contenido") ?>
 
-<?php $imagen = !empty($foto) ? $foto : 'nino.png'; ?>
+<?php $imagen = !empty($foto) ? $foto : "nino.png"; ?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -9,7 +9,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Panel de control</title>
-    <link rel="stylesheet" href="<?= base_url('assets/css/usuario.css') ?>" />
+    <link rel="stylesheet" href="<?= base_url("assets/css/usuario.css") ?>" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
@@ -24,7 +24,7 @@
                     <h3>Bienvenid@ :</h3>
                     <h2><?php echo $usuario["nombreusuario"] ?></h2>
                 </div>
-                <img src="<?= base_url('imagenes/'.$imagen) ?>" alt="">
+                <img src="<?= base_url("imagenes/".$imagen) ?>" alt="">
             </div>
         </div>
         <div class="card--container">
