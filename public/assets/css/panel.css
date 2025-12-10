@@ -1,0 +1,186 @@
+/* Contenedor general centrado y animado */
+.panel-container {
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1e3a5f 0%, #2d4a7c 100%);
+}
+
+.panel-box {
+    background: #1a1f2e;
+    border: 2px solid #06b6d4;
+    border-radius: 20px;
+    padding: 40px;
+    width: 100%;
+    max-width: 700px;
+    box-shadow: 0 0 30px rgba(6, 182, 212, 0.3), 0 10px 50px rgba(0, 0, 0, 0.5);
+    position: relative;
+    animation: pulse-glow 3s ease-in-out infinite;
+}
+
+.panel-box::before {
+    content: "";
+    position: absolute;
+    inset: -2px;
+    border-radius: 20px;
+    padding: 2px;
+    background: linear-gradient(45deg, #06b6d4, #0891b2, #06b6d4);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Títulos */
+.panel-title {
+    color: #06b6d4;
+    font-size: 26px;
+    font-weight: 600;
+    text-shadow: 0 0 10px rgba(6, 182, 212, 0.5);
+    background: #242938;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Estados */
+.status-online {
+    color: #22d3ee;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.status-offline {
+    color: #ef4444;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+/* Inputs */
+.panel-group {
+    margin-bottom: 20px;
+}
+
+.panel-label {
+    color: #06b6d4;
+    font-weight: 600;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.panel-input {
+    width: 100%;
+    padding: 15px;
+    border-radius: 6px;
+    border: 1px solid #334155;
+    background: #ffffff;
+    font-size: 15px;
+}
+
+.domain-group {
+    display: flex;
+    width: 100%;
+}
+
+/* Prefijo HTTPS */
+.domain-prefix {
+    background: #242938;
+    border: 1px solid #334155;
+    color: #06b6d4;
+    width: auto;
+
+    /* Ajustes clave */
+    height: 45px;
+    line-height: 45px; /* centra el texto vertical */
+    padding: 0 14px; /* solo padding horizontal */
+    
+    border-right: none;
+    border-radius: 6px 0 0 6px;
+
+    display: inline-block;
+}
+
+
+/* Input del dominio */
+.domain-group .panel-input {
+    border-radius: 0 6px 6px 0;
+    border-left: none;
+    height: 45px;
+    padding-left: 12px;
+    flex: 1;
+}
+
+
+
+/* Subtítulos */
+.panel-subtitle {
+    color: #06b6d4;
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+/* Lista */
+.panel-list {
+    list-style: none;
+    background: #242938;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.panel-list-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+/* Botones */
+.visit-btn {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+.button-row {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.btn-danger-outline,
+.btn-secondary-outline {
+    flex: 1;
+    padding: 12px;
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+    font-weight: 600;
+    border: 2px solid;
+    transition: 0.3s;
+}
+
+.btn-danger-outline {
+    border-color: #ef4444;
+    color: #ef4444;
+}
+
+.btn-danger-outline:hover {
+    background: #ef4444;
+    color: white;
+}
+
+.btn-secondary-outline {
+    border-color: #06b6d4;
+    color: #06b6d4;
+}
+
+.btn-secondary-outline:hover {
+    background: #06b6d4;
+    color: white;
+}

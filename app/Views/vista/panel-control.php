@@ -1,73 +1,53 @@
-<?php echo $this->extend("plantilla/layout-usuario") ?>
-<?php echo $this->section("contenido") ?>
+<?php echo $this -> extend("plantilla/layout-usuario") ?>
+<?php echo $this -> section("contenido") ?>
 
-<div class="container mt-4">
-    <div class="d-flex justify-content-between align-items-center mb-4">
-        <h1 class="fw-bold">Panel del Tunnel #<?php echo $servidor["id"] ?></h1>
-        <?php if ($online): ?>
-            <span class="badge bg-success fs-5">ONLINE</span>
-        <?php else: ?>
-            <span class="badge bg-danger fs-5">OFFLINE</span>
-        <?php endif; ?>
-    </div>
+<link rel="stylesheet" href="<?php echo base_url('assets/css/panel.css'); ?>">
 
-    <div class="card shadow-sm mb-4">
-        <div class="card-body">
-
-            <h5 class="card-title mb-3">Información del Tunnel</h5>
-
-            <div class="mb-3">
-                <label class="form-label fw-bold">Nombre</label>
-                <input type="text" class="form-control" value="<?php echo $servidor["nombre"] ?>" readonly>
-            </div>
-
-            <div class="mb-3">
-                <label class="form-label fw-bold">Descripción</label>
-                <input type="text" class="form-control" value="<?php echo $servidor["descripcion"] ?>" readonly>
-            </div>
-
-            <div class="mb-3">
-                <label class="form-label fw-bold">Dominio asignado</label>
-                <div class="input-group">
-                    <span class="input-group-text">https://</span>
-                    <input type="text" class="form-control" value="<?php echo $servidor["dominio"] ?>" readonly>
-                </div>
-            </div>
-
+<div class="panel-container">
+    <div class="panel-box">
+        <h1 class="panel-title">
+            Panel del Tunnel #<?php echo $servidor["id"] ?>
             <?php if ($online): ?>
-                <a href="https://<?php echo $servidor["dominio"] ?>" class="btn btn-primary w-100 mt-3"> Visitar túnel </a>
-            <?php else:?>
-                <a class="btn btn-danger w-100 mt-3"> OFFLINE </a>
+                <span class="status-online">ONLINE</span>
+            <?php else: ?>
+                <span class="status-offline">OFFLINE</span>
             <?php endif; ?>
+        </h1>
+        <div class="panel-group">
+            <label class="panel-label">Nombre</label>
+            <input type="text" class="panel-input" value="<?php echo $servidor["nombre"] ?>" readonly>
+        </div>
+        <div class="panel-group">
+            <label class="panel-label">Descripción</label>
+            <input type="text" class="panel-input" value="<?php echo $servidor["descripcion"] ?>" readonly>
+        </div>
+        <div class="panel-group">
+            <label class="panel-label">Dominio asignado</label>
+            <div class="domain-group">
+                <span class="domain-prefix">https://</span>
+                <input type="text" class="panel-input" value="<?php echo $servidor["dominio"] ?>" readonly>
+            </div>
+        </div>
+        <?php if ($online): ?>
+            <a href="https://<?php echo $servidor["dominio"] ?>" class="btn-success visit-btn">Visitar</a>
+        <?php else: ?>
+            <a class="btn-danger visit-btn">OFFLINE</a>
+        <?php endif; ?>
+        <ul class="panel-list">
+            <li class="panel-list-item">
+                Fecha de creación:
+                <span><?php echo $fecha_creacion ?? "N/A" ?></span>
+            </li>
+            <li class="panel-list-item">
+                Token:
+                <span><?php echo $token ?? "Ninguno por el momento"; ?></span>
+            </li>
+        </ul>
+        <div class="button-row">
+            <button class="btn-danger-outline">Eliminar Tunnel</button>
+            <a class="btn-secondary-outline" href="<?php echo base_url('general/token/'.$servidor['id']) ?>">Regenerar token</a>
         </div>
     </div>
-
-    <div class="card shadow-sm mb-4">
-        <div class="card-body">
-            <h5 class="card-title mb-3">Actividad reciente</h5>
-
-            <ul class="list-group">
-                <li class="list-group-item d-flex justify-content-between">
-                    Último cambio de estado:
-                    <span class="fw-bold">Hace 2 minutos</span>
-                </li>
-                <li class="list-group-item d-flex justify-content-between">
-                    Total de accesos:
-                    <span class="fw-bold">0 (por ahora)</span>
-                </li>
-                <li class="list-group-item d-flex justify-content-between">
-                    Fecha de creación:
-                    <span class="fw-bold"><?php echo $servidor["fecha_creacion"] ?? "N/A" ?></span>
-                </li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="d-flex gap-3">
-        <button class="btn btn-outline-secondary w-100">Regenerar token</button>
-        <button class="btn btn-outline-danger w-100">Eliminar</button>
-    </div>
-
 </div>
 
-<?php echo $this->endSection() ?>
+<?php echo $this -> endSection() ?>

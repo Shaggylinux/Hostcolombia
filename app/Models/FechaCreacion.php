@@ -2,11 +2,11 @@
     namespace App\Models;
     use CodeIgniter\Model;
     
-    class TokenModel extends Model{
-        protected $table = "token";
+    class FechaCreacion extends Model{
+        protected $table = "fecha_creacion";
         protected $primaryKey = 'id';
         protected $allowedFields = [
-                                    "token",
+                                    "fecha",
                                     "id_servidor"];
         
         public $timestamps = false;
