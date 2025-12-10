@@ -30,18 +30,6 @@ create table if not exists servidor(
 	foreign key(id_servidor) references servidor(id)
 );
 
-create table if not exists tarjeta(
-	id int primary key auto_increment,
-	numero int,
-	codigo int,
-	NombreCompleto text,
-	mes int,
-	ano int,
-	tipo_tarjeta text,
-	id_usuario int,
-	foreign key(id_usuario) references usuarios(id)
-);
-
 create table if not exists fecha_creacion(
 	id int primary key auto_increment,
 	fecha timestamp,
