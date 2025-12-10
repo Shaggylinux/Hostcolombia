@@ -7,13 +7,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="<?= base_url('assets/css/Administrador.css') ?>">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css">
-        <title> Panel de Servidores </title>
+        <title> Panel de Tunneles </title>
     </head>
     <body>
         <div class="admin-container">
             <div class="admin-header">
-                <h1>Panel de Servidores</h1>
-                <p>Administra y gestiona todos tus servidores tunnel</p>
+                <h1>Panel de Tunneles</h1>
+                <p>Administra y gestiona todos los Tunneles</p>
             </div>
             <div class="search-section">
                 <form method="get" action="" class="search-form">
@@ -28,8 +28,9 @@
                     </button>
                 </form>
             </div>
+        </div>
             <div class="export-section">
-                <form action="<?= base_url('/administrador/exportar_servidor?busqueda=' . ($busqueda ?? '')) ?>" method="post">
+                <form action="<?= base_url('/administrador/exportar_servidor?busqueda='.($busqueda ?? '')) ?>" method="post">
                     <h4>Exportar Datos a Excel</h4>
                     <div class="checkbox-grid">
                         <div class="checkbox-item">
@@ -43,10 +44,6 @@
                         <div class="checkbox-item">
                             <input class="form-check-input" type="checkbox" name="columnas[]" value="dominio" id="col-dominio" checked>
                             <label for="col-dominio">Dominio</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input class="form-check-input" type="checkbox" name="columnas[]" value="id_usuario" id="col-id-usuario" checked>
-                            <label for="col-id-usuario">ID Usuario</label>
                         </div>
                     </div>
                     <button class="export-btn" type="submit"> Exportar a Excel </button>

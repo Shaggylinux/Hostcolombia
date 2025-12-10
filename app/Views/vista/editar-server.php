@@ -15,7 +15,7 @@
 <body>
     <div class="edit-container">
         <form class="form" method="post" action="<?php echo base_url("/server/actualizar/".$server["id"]);?>">
-            <h1 class="edit-title">Editar Servidor</h1>
+            <h1 class="edit-title">Editar Tunnel</h1>
             
             <div class="input-group">
                 <span class="input-group-text"><i class="fa-solid fa-signature"></i></span>

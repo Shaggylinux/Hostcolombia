@@ -14,9 +14,8 @@
 <body>
     <section class="hero">
         <h1 class="hero-title">¡Crea, protege y disfruta a bajos costos con MIGI!</h1>
-        <p class="hero-subtitle">Crear servidores host en Colombia nunca fue tan fácil con <strong>MIGI</strong>.</p>
+        <p class="hero-subtitle">Crear Tunneles en Colombia nunca fue tan fácil con <strong>MIGI</strong>.</p>
         <p class="hero-subtitle">Fácil, rápido, seguro y a los mejores precios.</p>
-        <p class="hero-subtitle">¿Qué esperas para unirte y guardar tus archivos de forma segura en Colombia?</p>
         <div class="hero-cta">
             <a href="<?= base_url('/login/crearcuenta') ?>" class="btn-register">
                 <i class="fa-solid fa-user-plus"></i>

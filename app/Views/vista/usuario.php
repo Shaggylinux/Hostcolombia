@@ -33,7 +33,7 @@
                 <div class="payment--card light-red">
                     <div class="card--header">
                         <div class="amount">
-                            <span class="title">Crear tunel</span>
+                            <span class="title">Crear tunnel</span>
                             <span class="amount--value"></span>
                         </div>
                         <a href="<?= base_url("/vista/usuario-server") ?>" class="add-btn">
@@ -43,21 +43,20 @@
                     <span class="card--detail">Crea los tuneles que quieras</span>
                 </div>
             <?php foreach ($servidores as $te): ?>
-            <div class="payment--card <?php echo $te['color'] ?>">
+            <div class="payment--card">
                 <div class="card--header">
                     <?php if ($te["online"]): ?>
-                        <td><span class="status active">Activo</span></td>
+                        <td><span class="status active"> Activo </span></td>
                     <?php else: ?>
-                        <td><span class="status active">Apagado</span></td>
+                        <td><span class="status inactive"> Apagado </span></td>
                     <?php endif ?>
                     <div class="amount">
-                        <span class="amount--value"> Nombre : <?php echo $te["nombre"] ?> </span>
+                        <span class="amount--value"> <?php echo $te["nombre"] ?> </span>
                     </div>
                     <div class="card--buttons">
-                        <a href="<?= base_url("/vista/panel-control/".$te["id"]) ?>" class="add-btn <?php echo $te['oscuros'] ?>">
+                        <a href="<?= base_url("/vista/panel-control/".$te["id"]) ?>" class="add-btn">
                             <i class="fas fa-eye"></i>
                         </a>
-                    
                         <a href="<?= base_url("/vista/editar-server/".$te["id"]) ?>" class="edit--btn">
                             <i class="fa-solid fa-pencil"></i>
                         </a>
@@ -65,11 +64,11 @@
                 </div>
                 <span class="card--detail">Tunnel #<?php echo substr($te["id"], -4) ?></span>
             </div>
-            <?php endforeach; ?>
+                <?php endforeach; ?>
             </div>
         </div>
     </div>
 </body>
 </html>
 
-<?php echo $this->endSection() ?>
+<?php echo $this -> endSection() ?>

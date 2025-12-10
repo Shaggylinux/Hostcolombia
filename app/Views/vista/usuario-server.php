@@ -15,7 +15,7 @@
 <body>
     <div class="edit-container">
         <form method="post">
-            <h1 class="edit-title">Agregar servidor</h1>
+            <h1 class="edit-title">Agregar Tunnel</h1>
             <div class="input-group">
                 <span class="input-group-text"><i class="fa-solid fa-signature"></i></span>
                 <input type="text" class="form-control" placeholder="Nombre del tunnel"
@@ -27,7 +27,7 @@
                     name="descripcionserver" required>
             </div>
             <div class="input-group">
-                <span class="input-group-text"><i class="fa-solid fa-envelope"></i></span>
+                <span class="input-group-text">HTTPS://</span>
                 <input type="text" class="form-control" placeholder="Dominio"
                     name="dominioserver" required>
             </div>

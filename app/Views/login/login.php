@@ -40,16 +40,13 @@
             <div class="mb-3 text-start">
                 <label for="usuario" class="form-label">Nombre de usuario</label>
                 <div class="input-group">
-                    <span class="input-group-text"><i class="bi bi-person"></i></span>
-                    <input type="text" id="usuario" name="nombreusuario" class="form-control" placeholder="Ingresa tu nombre de usuario" required>
+                    <input type="text" id="usuario" name="nombreusuario" class="form-control" placeholder="Nombre de usuario" required>
                 </div>
             </div>
             <div class="mb-3 text-start">
                 <label for="password" class="form-label">Contraseña</label>
                 <div class="input-group">
-                    <span class="input-group-text"><i class="bi bi-lock"></i></span>
-                    <input type="password" id="clave" name="clave" class="form-control" placeholder="Ingresa tu contraseña" required>
-                    <span class="input-group-text toggle-password"><i class="bi bi-eye"></i></span>
+                    <input type="password" id="clave" name="clave" class="form-control" placeholder="Contraseña" required>
                 </div>
             </div>
             <button type="submit" class="btn-submit">Acceder</button>

@@ -2,18 +2,16 @@
 
 <nav class="navbar-custom" aria-label="Administrador navbar">
   <div class="navbar-container">
-    <a href="<?= base_url('/') ?>" class="navbar-logo" title="HostColombia">
+    <a href="<?= base_url('/') ?>" class="navbar-logo">
       <i class="fa-solid fa-server" aria-hidden="true"></i>
-      <span class="visually-hidden">HostColombia</span>
     </a>
     <button class="navbar-toggle" id="navbarToggle" aria-expanded="false" aria-controls="navbarMenu" aria-label="Abrir menú">
       <i class="fa-solid fa-bars" id="navbarIcon"></i>
     </button>
-
     <ul class="navbar-menu" id="navbarMenu" role="menu" aria-hidden="true">
       <li role="none">
         <a role="menuitem" class="navbar-link" href="<?= base_url('/vista/administrador'); ?>">
-          <i class="fa-solid fa-server"></i> Servidores
+          <i class="fa-solid fa-server"></i> Tunneles
         </a>
       </li>
       <li role="none">
@@ -21,9 +19,7 @@
           <i class="fa-solid fa-users"></i> Usuarios
         </a>
       </li>
-
       <li class="divider" role="separator" aria-hidden="true"></li>
-
       <li role="none">
         <a role="menuitem" class="navbar-logout" href="<?= base_url('/logout'); ?>">
           <i class="fa-solid fa-right-from-bracket"></i> Cerrar Sesión
@@ -36,8 +32,8 @@
 <script>
 (function(){
   const toggle = document.getElementById('navbarToggle');
-  const menu = document.getElementById('navbarMenu');
-  const icon = document.getElementById('navbarIcon');
+  const menu   = document.getElementById('navbarMenu');
+  const icon   = document.getElementById('navbarIcon');
 
   if (!toggle || !menu) return;
 
@@ -45,7 +41,6 @@
     menu.classList.add('open');
     menu.setAttribute('aria-hidden', 'false');
     toggle.setAttribute('aria-expanded', 'true');
-    // opcional: ambiar icono a X
     if (icon) icon.className = 'fa-solid fa-xmark';
   }
   function closeMenu() {

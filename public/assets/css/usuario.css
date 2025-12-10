@@ -75,7 +75,6 @@ body {
 
 .user--info {
   display: flex;
-  align-items: center;
   gap: 1.5rem;
 }
 
@@ -128,6 +127,7 @@ body {
 
 /* Cards destacadas con efecto importante */
 .payment--card {
+  display: grid; 
   background: var(--card-bg);
   border: 2px solid var(--border-cyan);
   border-radius: 12px;
@@ -161,7 +161,7 @@ body {
 }
 
 .card--header {
-  display: flex;
+  display: grid;
   justify-content: space-between;
   align-items: flex-start;
   margin-bottom: 1rem;
@@ -302,7 +302,13 @@ tbody tr td {
 }
 
 .status.active {
-  background: rgba(34, 211, 238, 0.2);
+  background: rgba(24, 247, 80, 0.2);
+  color: var(--text-cyan);
+  border: 1px solid var(--border-cyan);
+}
+
+.status.inactive {
+  background: rgba(189, 12, 65, 0.2);
   color: var(--text-cyan);
   border: 1px solid var(--border-cyan);
 }
@@ -379,14 +385,17 @@ tbody tr td {
 }
 
 .payment--card {
-    position: relative;
-    z-index: 1;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
 }
 
 .card--header {
-    display: flex;
+    display: grid;
     justify-content: space-between;
     align-items: center;
+    text-align: center;
 }
 
 .card--buttons {
@@ -403,4 +412,3 @@ tbody tr td {
     border-radius: 10px;
     font-size: 18px;
 }
-

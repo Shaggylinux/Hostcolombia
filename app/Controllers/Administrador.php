@@ -15,7 +15,7 @@
             $busqueda = $this -> request -> getGet("busqueda");
         
             $db = Database::connect();
-            $builder = $db-> table("usuarios");
+            $builder = $db -> table("usuarios");
         
             if (!empty($busqueda)) {
                 $builder -> groupStart()
@@ -86,8 +86,8 @@
                 return view("/vista/error-vistas");
             }
         
-            $columnas = $this->request->getPost("columnas");
-            $busqueda = $this->request->getGet("busqueda");
+            $columnas = $this -> request -> getPost("columnas");
+            $busqueda = $this -> request -> getGet("busqueda");
         
             if (!$columnas || count($columnas) == 0) {
                 return "<h1>Debes seleccionar al menos una columna</h1>";
@@ -119,7 +119,7 @@
             foreach ($usuarios as $u) {
                 $col = "A";
                 foreach ($columnas as $campo) {
-                    $sheet -> setCellValue($col .$fila, $u[$campo] ?? "");
+                    $sheet -> setCellValue($col.$fila, $u[$campo] ?? "");
                     $col++;
                 }
                 $fila++;
@@ -140,8 +140,8 @@
                 return view("/vista/error-vistas");
             }
         
-            $columnas = $this->request->getPost("columnas");
-            $busqueda = $this->request->getGet("busqueda");
+            $columnas = $this -> request -> getPost("columnas");
+            $busqueda = $this -> request -> getGet("busqueda");
         
             if (!$columnas || count($columnas) === 0) {
                 return "Error: Debes seleccionar al menos una columna.";
@@ -158,14 +158,13 @@
                          -> groupEnd();
             }
         
-            $servidor = $db -> get() -> getResultArray();
-        
+            $servidor    = $db -> get() -> getResultArray();
             $spreadsheet = new Spreadsheet();
-            $sheet = $spreadsheet->getActiveSheet();
+            $sheet       = $spreadsheet -> getActiveSheet();
         
             $col = "A";
             foreach ($columnas as $c) {
-                $sheet->setCellValue($col."1", strtoupper($c));
+                $sheet -> setCellValue($col."1", strtoupper($c));
                 $col++;
             }
         
@@ -173,7 +172,7 @@
             foreach ($servidor as $s) {
                 $col = "A";
                 foreach ($columnas as $c) {
-                    $sheet->setCellValue($col.$fila, $s[$c] ?? "");
+                    $sheet -> setCellValue($col.$fila, $s[$c] ?? "");
                     $col++;
                 }
                 $fila++;
@@ -185,7 +184,7 @@
             header("Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
             header("Content-Disposition: attachment;filename=\"$filename\"");
             header("Cache-Control: max-age=0");
-            $writer->save("php://output");
+            $writer -> save("php://output");
             exit;
         }
     }
