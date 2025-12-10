@@ -184,3 +184,44 @@
     background: #06b6d4;
     color: white;
 }
+
+/* Botón base */
+.status-btn {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    text-align: center;
+    font-weight: 600;
+    border-radius: 10px;
+    margin-top: 20px;
+    font-size: 16px;
+    transition: 0.3s ease;
+    text-decoration: none;
+}
+
+/* --------- BOTÓN ONLINE --------- */
+.online-btn {
+    background: linear-gradient(135deg, #06b6d4 0%, #22d3ee 100%);
+    color: #0a0f1a;
+    box-shadow: 0 0 15px rgba(34, 211, 238, 0.5);
+    border: 2px solid #22d3ee;
+}
+
+.online-btn:hover {
+    background: linear-gradient(135deg, #22d3ee 0%, #06b6d4 100%);
+    box-shadow: 0 0 25px rgba(34, 211, 238, 0.8);
+}
+
+/* --------- BOTÓN OFFLINE --------- */
+.offline-btn {
+    background: linear-gradient(135deg, #7f1d1d 0%, #b91c1c 100%);
+    color: #ffffff;
+    border: 2px solid #ef4444;
+    box-shadow: 0 0 15px rgba(239, 68, 68, 0.4);
+    cursor: not-allowed;
+}
+
+.offline-btn:hover {
+    background: linear-gradient(135deg, #991b1b 0%, #dc2626 100%);
+    box-shadow: 0 0 25px rgba(239, 68, 68, 0.7);
+}

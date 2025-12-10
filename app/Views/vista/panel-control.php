@@ -28,11 +28,12 @@
                 <input type="text" class="panel-input" value="<?php echo $servidor["dominio"] ?>" readonly>
             </div>
         </div>
-        <?php if ($online): ?>
-            <a href="https://<?php echo $servidor["dominio"] ?>" class="btn-success visit-btn">Visitar</a>
-        <?php else: ?>
-            <a class="btn-danger visit-btn">OFFLINE</a>
-        <?php endif; ?>
+<?php if ($online): ?>
+    <a href="https://<?php echo $servidor['dominio'] ?>" class="status-btn online-btn">Visitar</a>
+<?php else: ?>
+    <a class="status-btn offline-btn">Offline</a>
+<?php endif; ?>
+
         <ul class="panel-list">
             <li class="panel-list-item">
                 Fecha de creación:
@@ -44,7 +45,7 @@
             </li>
         </ul>
         <div class="button-row">
-            <button class="btn-danger-outline">Eliminar Tunnel</button>
+            <a href="<?php echo base_url("/server/eliminar/".$servidor["id"]) ?>" class="btn-danger-outline"> Eliminar Tunnel </a>
             <a class="btn-secondary-outline" href="<?php echo base_url('general/token/'.$servidor['id']) ?>">Regenerar token</a>
         </div>
     </div>

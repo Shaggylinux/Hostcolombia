@@ -150,5 +150,10 @@
             
                 return redirect() -> to("/usuario/panelcontrol/$idUrl");
             }
+
+        public function eliminar_servidor($idUrl){
+            new UsuarioServerModel() -> delete($idUrl);
+            return redirect() -> to("/vista/usuario");
+        }
     }
 ?>

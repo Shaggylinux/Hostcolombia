@@ -44,5 +44,7 @@ $routes -> post("/administrador/exportar_usuarios", "Administrador::exportar_usu
 $routes -> get("/vista/editar-usuario/(:num)", "Usuario::editar_usuario/$1"); // Editar usaurio
 $routes -> post("/usuario/actualizar/(:num)", "Usuario::actualizar_usuario/$1"); // Actualizar datos del usuario
 
-$routes->get('general/token/(:num)', 'Usuarioserver::general_token/$1');
-$routes->get('usuario/panelcontrol/(:num)', 'Usuarioserver::panelcontrol/$1');
+$routes -> get('general/token/(:num)', 'Usuarioserver::general_token/$1');
+$routes -> get('usuario/panelcontrol/(:num)', 'Usuarioserver::panelcontrol/$1');
+
+$routes -> get("/server/eliminar/(:num)",  "Usuarioserver::eliminar_servidor/$1"); // Eliminar tunnel
