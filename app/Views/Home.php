@@ -1,8 +1,10 @@
+<?php echo $this->extend("plantilla/layout") ?>
+<?php echo $this->section("contenido") ?>
+
 <!DOCTYPE html>
 <html lang="es">
 
-<?php echo $this->extend("plantilla/layout") ?>
-<?php echo $this->section("contenido") ?>
+
 
 <head>
     <meta charset="UTF-8">
@@ -11,8 +13,10 @@
     <link rel="stylesheet" href="<?= base_url('assets/css/Home.css') ?>">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
-    <section class="hero">
+    <section id="Nosotros" class="hero">
+        <div class="background-logo">右</div>
         <h1 class="hero-title">¡Crea, protege y disfruta a bajos costos con MIGI!</h1>
         <p class="hero-subtitle">Crear Tunneles en Colombia nunca fue tan fácil con <strong>MIGI</strong>.</p>
         <p class="hero-subtitle">Fácil, rápido, seguro y a los mejores precios.</p>
@@ -24,7 +28,7 @@
         </div>
     </section>
 
-    <section class="features-section">
+    <section id="elegirnos" class="features-section">
         <h2 class="section-title">¿Por qué elegirnos?</h2>
         <div class="features-grid">
             <div class="feature-card">
@@ -77,8 +81,11 @@
         </div>
     </section>
 
-    <footer class="footer"> <p>2025 propiedad de SCRUM 4.</p> </footer>
+    <footer class="footer">
+        <p>2025 propiedad de SCRUM 4.</p>
+    </footer>
 </body>
+
 </html>
 
-<?php echo $this -> endSection() ?>
+<?php echo $this->endSection() ?>
